@@ -667,8 +667,8 @@ body::before{
       <button class="filter-btn" data-category="eastenSweets">حلويات شرقية</button>
       <button class="filter-btn" data-category="aidPackages">بكجات العيد</button>
       <button class="filter-btn" data-category="westernSweets">حلويات غربية</button>
-      <button class="filter-btn" data-category="cold">مشروبات باردة</button>
-        <button class="filter-btn" data-category="hot">مشروبات ساخنة</button>
+      <!-- <button class="filter-btn" data-category="cold">مشروبات باردة</button> -->
+        <!-- <button class="filter-btn" data-category="hot">مشروبات ساخنة</button> -->
        <button class="filter-btn" data-category="waffle">وافل</button>
       <button class="filter-btn" data-category="crepe">كريب</button> 
       <button class="filter-btn" data-category="miniCake">ميني كيك</button> 
@@ -707,7 +707,7 @@ body::before{
       <div class="footer-social">
         <h4>تابعنا</h4>
         <div class="social-icons">
-          
+    
           <a href="https://wa.me/972569896990" target="_blank" rel="noopener" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
           <a href="https://instagram.com/dahabsweets" target="_blank" rel="noopener" aria-label="إنستاغرام"><i class="fab fa-instagram"></i></a>
           <a href="#" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
@@ -785,18 +785,17 @@ const categoryLabels = {
 };
 
 
-
 const products = [
   // =========================
   // Milkshakes
   // =========================
   {
     id: 1,
-    name: "ميلك شيك شوكولاتة فاخر",
+    name: "ميلك شيك نوتيلا",
     category: "milkshake",
-    price: "20 ₪",
+    price: "25 ₪",
     image: "images/products/milk-shake/milk-shake-choclate.png",
-    description: "ميلك شيك شوكولاتة غني بقوام كريمي، مزين بالكريمة وصوص الشوكولاتة لذوق فاخر.",
+    description: "ميلك شيك غني بنكهة النوتيلا، قوامه كريمي ومناسب لعشاق الشوكولاتة.",
     featured: true,
     emoji: "🍫"
   },
@@ -804,395 +803,337 @@ const products = [
     id: 2,
     name: "ميلك شيك بلوبري",
     category: "milkshake",
-    price: "14 ₪",
+    price: "25 ₪",
     image: "images/products/milk-shake/milk-shake-blubery.png",
-    description: "ميلك شيك فراولة منعش بنكهة طبيعية وقوام ناعم، مناسب لمحبي الطعم الفاكهي الخفيف.",
+    description: "ميلك شيك بلوبري منعش بقوام ناعم ونكهة فاكهية خفيفة.",
     featured: false,
-    emoji: "🍓"
+    emoji: "🫐"
   },
   {
     id: 3,
     name: "ميلك شيك كراميل",
     category: "milkshake",
-    price: "14 ₪",
+    price: "25 ₪",
     image: "images/products/milk-shake/milk-shake-caramel.png",
-    description: "ميلك شيك مانجو استوائي بطعم غني ومنعش، محضر بقوام كريمي ولون جذاب.",
+    description: "ميلك شيك كراميل بطعم غني ومتوازن مع قوام كريمي ناعم.",
     featured: false,
-    emoji: "🥭"
+    emoji: "🍯"
   },
   {
     id: 4,
     name: "ميلك شيك بستاشيو",
     category: "milkshake",
-    price: "16 ₪",
+    price: "25 ₪",
     image: "images/products/milk-shake/milk-shake-pistachio.png",
-    description: "ميلك شيك أوريو كريمي مع قطع بسكويت مقرمشة وصوص شوكولاتة بطعم محبوب.",
+    description: "ميلك شيك بستاشيو فاخر بنكهة فستق غنية وقوام كريمي مميز.",
     featured: true,
-    emoji: "⚫"
+    emoji: "🥜"
   },
 
   // =========================
   // Waffles
   // =========================
- 
+  {
+    id: 5,
+    name: "وافل كيندر بوينو",
+    category: "waffle",
+    price: "40 ₪",
+    image: "images/products/wafel/wafle-kinder.png",
+    description: "وافل طازج مغطى بصوص الكيندر وقطع الشوكولاتة بطعم غني ومميز.",
+    featured: false,
+    emoji: "🧇"
+  },
   {
     id: 6,
-    name: "وافل كيندر وكريمة",
+    name: "وافل نوتيلا",
     category: "waffle",
-    price: "17 ₪",
-    image: "images/products/wafel/wafle-kinder.png",
-    description: "وافل كيندر طازج مع فراولة  مزيج خفيف ومنعش لمحبي الفواكه.",
-    featured: false,
-    emoji: "🧇"
-  },
-
-    {
-    id: 6,
-    name: "وافل نوتيلا ",
-    category: "waffle",
-    price: "17 ₪",
+    price: "35 ₪",
     image: "images/products/wafel/wafle-nutlle.png",
-    description: "وافل كيندر طازج مع فراولة  مزيج خفيف ومنعش لمحبي الفواكه.",
+    description: "وافل ساخن بطبقة نوتيلا غنية، مناسب لمحبي الطعم الكلاسيكي.",
     featured: false,
     emoji: "🧇"
   },
-  ,
-
-    {
-    id: 6,
-    name: "وافل مكس ",
+  {
+    id: 7,
+    name: "وافل مكس",
     category: "waffle",
-    price: "17 ₪",
+    price: "45 ₪",
     image: "images/products/wafel/wafle-mix.png",
-    description: "وافل كيندر طازج مع فراولة  مزيج خفيف ومنعش لمحبي الفواكه.",
-    featured: false,
+    description: "وافل مكس بتشكيلة صوصات وإضافات متنوعة لطعم أغنى وتجربة فاخرة.",
+    featured: true,
     emoji: "🧇"
   },
+
   // =========================
   // Crepes
   // =========================
   {
-    id: 7,
+    id: 8,
     name: "كريب نوتيلا",
     category: "crepe",
-    price: "16 ₪",
+    price: "25 ₪",
     image: "images/products/crepe/crepe-nutlle.png",
-    description: "كريب طري محشو بالشوكولاتة والموز الطازج، بطعم متوازن بين الحلاوة والفاكهة.",
+    description: "كريب طري محشو بالنوتيلا، يقدم بطعم شوكولاتة غني وقوام ناعم.",
     featured: false,
     emoji: "🥞"
   },
-  {
-    id: 8,
-    name: "كريب لوتس",
-    category: "crepe",
-    price: "18 ₪",
-    image: "images/products/crepe/crepe-lutes.png",
-    description: "كريب لوتس غني بكريمة اللوتس وقطع البسكويت، مناسب لعشاق الطعم الكراميلي.",
-    featured: false,
-    emoji: "🥞"
-  },
-  {
-    id: 7,
-    name: "كريب  بستاشيو",
-    category: "crepe",
-    price: "16 ₪",
-    image: "images/products/crepe/crepe-pistachio.png",
-    description: "كريب طري محشو بالشوكولاتة والموز الطازج، بطعم متوازن بين الحلاوة والفاكهة.",
-    featured: false,
-    emoji: "🥞"
-  },
-
-  {
-    id: 7,
-    name: "كريب مكس",
-    category: "crepe",
-    price: "16 ₪",
-    image: "images/products/crepe/crepe-mix.png",
-    description: "كريب طري محشو بالشوكولاتة والموز الطازج، بطعم متوازن بين الحلاوة والفاكهة.",
-    featured: false,
-    emoji: "🥞"
-  },
-
-  // =========================
-  // Pancakes
-  // =========================
   {
     id: 9,
-    name: "بان كيك العسل والزبدة",
-    category: "pancake",
-    price: "15 ₪",
-    image: "images/milkshake.png",
-    description: "بان كيك طري يقدم مع الزبدة والعسل الذهبي، خيار كلاسيكي دافئ ولذيذ.",
+    name: "كريب لوتس",
+    category: "crepe",
+    price: "30 ₪",
+    image: "images/products/crepe/crepe-lutes.png",
+    description: "كريب لوتس غني بكريمة اللوتس وقطع البسكويت بطعم كراميلي مميز.",
     featured: false,
     emoji: "🥞"
   },
   {
     id: 10,
-    name: "بان كيك بلوبيري",
-    category: "pancake",
-    price: "17 ₪",
-    image: "images/milkshake.png",
-    description: "بان كيك ناعم مع نكهة البلوبيري وصوص التوت، مناسب لمحبي الطعم الفاكهي.",
+    name: "كريب بستاشيو",
+    category: "crepe",
+    price: "30 ₪",
+    image: "images/products/crepe/crepe-pistachio.png",
+    description: "كريب بستاشيو فاخر بطعم الفستق الغني وصوص كريمي ناعم.",
     featured: false,
-    emoji: "🫐"
+    emoji: "🥞"
+  },
+  {
+    id: 11,
+    name: "كريب مكس",
+    category: "crepe",
+    price: "35 ₪",
+    image: "images/products/crepe/crepe-mix.png",
+    description: "كريب مكس يجمع أكثر من نكهة وصوص في قطعة واحدة بطعم متوازن وفاخر.",
+    featured: true,
+    emoji: "🥞"
   },
 
   // =========================
-  // Ice Cream
+  // Mini Cake / Western Sweets
   // =========================
   {
-    id: 11,
-    name: "كوب آيس كريم مشكل",
-    category: "icecream",
-    price: "12 ₪",
-    image: "images/milk2.png",
-    description: "كوب آيس كريم بنكهات متنوعة مع توبينج شهي، اختيار مناسب للحلى السريع.",
-    featured: false,
-    emoji: "🍨"
-  },
-
-
-  //mini cakes
-
-  {
-    id: 11,
-    name: "ميني بيبي كيك داينميت ",
+    id: 12,
+    name: "ميني بيبي كيك داينميت",
     category: "miniCake",
-    price: "12 ₪",
+    price: "30 ₪",
     image: "images/products/mini-cake/mini-baby-dienamt.png",
-    description: "كوب آيس كريم بنكهات متنوعة مع توبينج شهي، اختيار مناسب للحلى السريع.",
+    description: "ميني كيك غني بطبقات ناعمة وصوص كثيف، مناسب لعشاق الحلى الفاخر.",
     featured: false,
-    emoji: "🍨"
+    emoji: "🍰"
   },
-
   {
-    id: 11,
-    name: "ميني كيك كراميل ",
+    id: 13,
+    name: "ميني كيك كراميل",
     category: "miniCake",
-    price: "12 ₪",
+    price: "25 ₪",
     image: "images/products/mini-cake/mini-cake-caramel.png",
-    description: "كوب آيس كريم بنكهات متنوعة مع توبينج شهي، اختيار مناسب للحلى السريع.",
+    description: "ميني كيك كراميل بطعم ناعم ولمسة حلوة متوازنة.",
     featured: false,
-    emoji: "🍨"
+    emoji: "🍰"
   },
-
-    {
-    id: 11,
-    name: "ميني كيك شوكلاته ",
+  {
+    id: 14,
+    name: "ميني كيك شوكولاتة",
     category: "miniCake",
-    price: "12 ₪",
+    price: "25 ₪",
     image: "images/products/mini-cake/mini-cake-choclate.png",
-    description: "كوب آيس كريم بنكهات متنوعة مع توبينج شهي، اختيار مناسب للحلى السريع.",
+    description: "ميني كيك شوكولاتة غني بطبقات كريمية وقوام ناعم.",
     featured: false,
-    emoji: "🍨"
+    emoji: "🍫"
   },
-
-    {
-    id: 11,
-    name: "ميني كيك نوتيلا ",
+  {
+    id: 15,
+    name: "ميني كيك نوتيلا",
     category: "miniCake",
-    price: "12 ₪",
+    price: "25 ₪",
     image: "images/products/mini-cake/mini-cake-nutlle.png",
-    description: "كوب آيس كريم بنكهات متنوعة مع توبينج شهي، اختيار مناسب للحلى السريع.",
+    description: "ميني كيك بنكهة النوتيلا، يقدم بطعم شوكولاتة غني ومحبوب.",
     featured: false,
-    emoji: "🍨"
+    emoji: "🍫"
   },
-  
-    {
-    id: 11,
-    name: "ميني كيك موس شوكلاته ",
+  {
+    id: 16,
+    name: "ميني موس شوكولاتة",
     category: "miniCake",
-    price: "12 ₪",
+    price: "25 ₪",
     image: "images/products/mini-cake/mini-mose-choclate.png",
-    description: "كوب آيس كريم بنكهات متنوعة مع توبينج شهي، اختيار مناسب للحلى السريع.",
+    description: "موس شوكولاتة ناعم بقوام خفيف وطعم كاكاو غني.",
     featured: false,
-    emoji: "🍨"
+    emoji: "🍮"
   },
-
-
 
   // =========================
   // Cakes
   // =========================
-
-  {
-    id: 13,
-    name: "كيك الشوكولاتة الفاخر",
-    category: "cake",
-    price: "22 ₪",
-    image: "images/products/cake/cake-choclate.png",
-    description: "كيك شوكولاتة غني بطبقات كريمية ناعمة، مناسب لعشاق الطعم الكاكاوي العميق.",
-    featured: false,
-    emoji: "🎂"
-  },
-  {
-    id: 14,
-    name: "كيك اللوتس الفاخر",
-    category: "cake",
-    price: "22 ₪",
-    image: "images/products/cake/cake-lutes.png",
-    description: "كيك لوتس فاخر بطبقات كريمة ناعمة ونكهة بسكويت كراميلية مميزة.",
-    featured: false,
-    emoji: "🎂"
-  },
-  {
-    id: 15,
-    name: "كيك البستاشيو الفاخر",
-    category: "cake",
-    price: "22 ₪",
-    image: "images/products/cake/cake-pistachio.png",
-    description: "كيك بستاشيو راقٍ بطعم الفستق الغني وكريمة ناعمة تعطيه لمسة فاخرة.",
-    featured: false,
-    emoji: "🎂"
-  },
-  {
-    id: 16,
-    name: "كيك الكيندر الفاخر",
-    category: "cake",
-    price: "22 ₪",
-    image: "images/products/cake/cake-kinder.png",
-    description: "كيك كيندر بطبقات كريمية وشوكولاتة بالحليب، خيار مميز لمحبي الطعم الناعم.",
-    featured: false,
-    emoji: "🎂"
-  },
   {
     id: 17,
+    name: "كيك الشوكولاتة الفاخر",
+    category: "cake",
+    price: "25 ₪",
+    image: "images/products/cake/cake-choclate.png",
+    description: "كيك شوكولاتة غني بطبقات كريمية ناعمة لعشاق الطعم الكاكاوي.",
+    featured: false,
+    emoji: "🎂"
+  },
+  {
+    id: 18,
+    name: "كيك اللوتس الفاخر",
+    category: "cake",
+    price: "30 ₪",
+    image: "images/products/cake/cake-lutes.png",
+    description: "كيك لوتس فاخر بطعم بسكويت كراميلي وكريمة ناعمة.",
+    featured: false,
+    emoji: "🎂"
+  },
+  {
+    id: 19,
+    name: "كيك البستاشيو الفاخر",
+    category: "cake",
+    price: "30 ₪",
+    image: "images/products/cake/cake-pistachio.png",
+    description: "كيك بستاشيو راقٍ بطعم الفستق الغني ولمسة كريمية فاخرة.",
+    featured: false,
+    emoji: "🎂"
+  },
+  {
+    id: 20,
+    name: "كيك الكيندر الفاخر",
+    category: "cake",
+    price: "30 ₪",
+    image: "images/products/cake/cake-kinder.png",
+    description: "كيك كيندر بطبقات ناعمة وشوكولاتة بالحليب بطعم مميز.",
+    featured: false,
+    emoji: "🎂"
+  },
+  {
+    id: 21,
     name: "كيك الرافايلو الفاخر",
     category: "cake",
-    price: "22 ₪",
+    price: "25 ₪",
     image: "images/products/cake/cake-rafilo.png",
-    description: "كيك رافايلو بنكهة جوز الهند والكريمة البيضاء، بطعم فاخر وناعم.",
+    description: "كيك رافايلو بنكهة جوز الهند والكريمة البيضاء، بطعم ناعم وفاخر.",
     featured: false,
     emoji: "🎂"
   },
 
-
-
-  ///Chease Cake
-
-
-
+  // =========================
+  // Cheesecake
+  // =========================
   {
-    id: 15,
-    name: "تشيز كيك بلوبري ",
+    id: 22,
+    name: "تشيز كيك بلوبري",
     category: "cheaseCake",
-    price: "22 ₪",
+    price: "25 ₪",
     image: "images/products/chease-cake/chease-cake-bluebery.png",
-    description: "كيك بستاشيو راقٍ بطعم الفستق الغني وكريمة ناعمة تعطيه لمسة فاخرة.",
+    description: "تشيز كيك بلوبري بطبقة كريمية وصوص توت منعش.",
     featured: false,
-    emoji: "🎂"
+    emoji: "🍰"
   },
-  
-
   {
-    id: 15,
-    name: "تشيز كيك لوتس ",
+    id: 23,
+    name: "تشيز كيك لوتس",
     category: "cheaseCake",
-    price: "22 ₪",
+    price: "30 ₪",
     image: "images/products/chease-cake/chease-cake-lutes.png",
-    description: "كيك بستاشيو راقٍ بطعم الفستق الغني وكريمة ناعمة تعطيه لمسة فاخرة.",
+    description: "تشيز كيك لوتس بطعم كراميلي غني وقاعدة بسكويت مقرمشة.",
     featured: false,
-    emoji: "🎂"
+    emoji: "🍰"
   },
-
   {
-    id: 15,
-    name: "تشيز كيك نوتيلا  ",
+    id: 24,
+    name: "تشيز كيك نوتيلا",
     category: "cheaseCake",
-    price: "22 ₪",
+    price: "25 ₪",
     image: "images/products/chease-cake/chease-cake-nutlle.png",
-    description: "كيك بستاشيو راقٍ بطعم الفستق الغني وكريمة ناعمة تعطيه لمسة فاخرة.",
+    description: "تشيز كيك نوتيلا بطبقة شوكولاتة ناعمة وطعم غني.",
     featured: false,
-    emoji: "🎂"
+    emoji: "🍰"
   },
-
-    {
-    id: 15,
-    name: "تشيز كيك أوريو ",
+  {
+    id: 25,
+    name: "تشيز كيك أوريو",
     category: "cheaseCake",
-    price: "22 ₪",
+    price: "25 ₪",
     image: "images/products/chease-cake/chease-cake-oreoo.png",
-    description: "كيك بستاشيو راقٍ بطعم الفستق الغني وكريمة ناعمة تعطيه لمسة فاخرة.",
+    description: "تشيز كيك أوريو بقطع بسكويت مقرمشة وكريمة ناعمة.",
     featured: false,
-    emoji: "🎂"
+    emoji: "🍪"
+  },
+  {
+    id: 26,
+    name: "تشيز كيك بستاشيو",
+    category: "cheaseCake",
+    price: "30 ₪",
+    image: "images/products/chease-cake/chease-cake-pistachio.png",
+    description: "تشيز كيك بستاشيو فاخر بطعم الفستق وكريمة غنية.",
+    featured: false,
+    emoji: "🥜"
   },
 
-    {
-    id: 15,
-    name: "تشيز كيك بستاشيو ",
-    category: "cheaseCake",
-    price: "22 ₪",
-    image: "images/products/chease-cake/chease-cake-pistachio.png",
-    description: "كيك بستاشيو راقٍ بطعم الفستق الغني وكريمة ناعمة تعطيه لمسة فاخرة.",
-    featured: false,
-    emoji: "🎂"
-  },
   // =========================
   // Hot Drinks
   // =========================
   {
-    id: 18,
+    id: 27,
     name: "إسبريسو صغير",
     category: "hot",
-    price: "12 ₪",
+    price: "7 ₪",
     image: "images/coffee.big.png",
-    description: "قهوة إسبريسو مركزة بطعم قوي ورائحة غنية، مناسبة لمحبي القهوة الكلاسيكية.",
+    description: "إسبريسو إيطالي مركز بطعم قوي ورائحة قهوة غنية.",
     featured: false,
     emoji: "☕"
   },
   {
-    id: 18,
+    id: 28,
     name: "إسبريسو كبير",
     category: "hot",
     price: "12 ₪",
     image: "images/coffee.big.png",
-    description: "قهوة إسبريسو مركزة بطعم قوي ورائحة غنية، مناسبة لمحبي القهوة الكلاسيكية.",
+    description: "دبل إسبريسو إيطالي لمحبي القهوة المركزة بطعم أقوى.",
     featured: false,
     emoji: "☕"
   },
   {
-    id: 19,
+    id: 29,
     name: "كابتشينو",
     category: "hot",
-    price: "13 ₪",
+    price: "20 ₪",
     image: "images/products/hot-drinks/captachino.png",
-    description: "جرعة إسبريسو أكبر بطعم مركز وقوام غني، تمنحك بداية قوية لليوم.",
+    description: "كابتشينو ساخن بإسبريسو وحليب مبخر ورغوة ناعمة.",
     featured: false,
     emoji: "☕"
   },
   {
-    id: 20,
+    id: 30,
     name: "كافيه لاتيه",
     category: "hot",
-    price: "11 ₪",
+    price: "25 ₪",
     image: "images/products/hot-drinks/coffee-latih2.png",
-    description: "كاكاو ساخن غني بالشوكولاتة مع كريمة ناعمة، مشروب دافئ ومريح.",
+    description: "كافيه لاتيه ساخن بحليب كريمي وقهوة ناعمة ومتوازنة.",
     featured: false,
-    emoji: "🍫"
+    emoji: "☕"
   },
-
-   {
-    id: 20,
-    name: "كافيه  موكا",
+  {
+    id: 31,
+    name: "كافيه موكا",
     category: "hot",
-    price: "11 ₪",
+    price: "25 ₪",
     image: "images/products/hot-drinks/coffee-moka.png",
-    description: "كاكاو ساخن غني بالشوكولاتة مع كريمة ناعمة، مشروب دافئ ومريح.",
+    description: "كافيه موكا يجمع بين القهوة والشوكولاتة بطعم دافئ وغني.",
     featured: false,
     emoji: "🍫"
   },
-
 
   // =========================
   // Cold Drinks
   // =========================
   {
-    id: 21,
+    id: 32,
     name: "آيس لاتيه",
     category: "cold",
-    price: "14 ₪",
+    price: "20 ₪",
     image: "images/milkshake.png",
-    description: "آيس لاتيه بارد بقهوة ناعمة وحليب كريمي، مناسب لمحبي القهوة المنعشة.",
+    description: "آيس لاتيه بارد بقهوة ناعمة وحليب كريمي منعش.",
     featured: false,
     emoji: "🧊"
   },
@@ -1201,174 +1142,174 @@ const products = [
   // Offers
   // =========================
   {
-    id: 22,
+    id: 33,
     name: "عرض الثنائي — كريب + ميلك شيك",
     category: "offers",
-    price: "28 ₪",
+    price: "45 ₪",
     image: "images/milkshake.png",
-    description: "عرض مميز يجمع كريب شهي مع ميلك شيك من اختيارك بسعر خاص.",
-    featured: false,
+    description: "عرض يجمع كريب نوتيلا مع ميلك شيك من اختيارك بسعر مناسب.",
+    featured: true,
     emoji: "🎁"
   },
   {
-    id: 23,
+    id: 34,
     name: "عرض العائلة — 4 أصناف",
     category: "offers",
-    price: "55 ₪",
+    price: "95 ₪",
     image: "images/milkshake.png",
-    description: "اختر 4 أصناف من المنيو بسعر عائلي مناسب للمشاركة.",
-    featured: false,
+    description: "عرض عائلي مناسب للمشاركة، اختر 4 أصناف من المنيو.",
+    featured: true,
     emoji: "👨‍👩‍👧‍👦"
+  },
+
+  // =========================
+  // Eid Packages
+  // =========================
+  {
+    id: 35,
+    name: "بكج العيد الفاخر",
+    category: "aidPackages",
+    price: "150 ₪",
+    image: "images/products/aid-packages/aid-package.png",
+    description: "بكج عيد فاخر بتشكيلة حلويات شرقية مناسبة للضيافة والمناسبات.",
+    featured: true,
+    emoji: "🍱"
+  },
+  {
+    id: 36,
+    name: "بكج العيد الفاخر",
+    category: "aidPackages",
+    price: "150 ₪",
+    image: "images/products/aid-packages/aid-package1.png",
+    description: "تشكيلة عيد أنيقة من الحلويات الشرقية بتقديم مرتب وفاخر.",
+    featured: true,
+    emoji: "🍱"
+  },
+  {
+    id: 37,
+    name: "بكج العيد الفاخر",
+    category: "aidPackages",
+    price: "150 ₪",
+    image: "images/products/aid-packages/aid-package2.png",
+    description: "بكج حلويات شرقية مناسب للزيارات والعزائم بطابع فاخر.",
+    featured: true,
+    emoji: "🍱"
+  },
+  {
+    id: 38,
+    name: "بكج العيد المشكل",
+    category: "aidPackages",
+    price: "150 ₪",
+    image: "images/products/aid-packages/aid-package3.png",
+    description: "بكج مشكل يضم أكثر من صنف شرقي لتقديم ضيافة متنوعة.",
+    featured: true,
+    emoji: "🍱"
+  },
+  {
+    id: 39,
+    name: "بكج العيد المشكل",
+    category: "aidPackages",
+    price: "150 ₪",
+    image: "images/products/aid-packages/aid-package4.png",
+    description: "تشكيلة عيد مشكلة بطعم شرقي غني وتقديم مناسب للمناسبات.",
+    featured: true,
+    emoji: "🍱"
   },
 
   // =========================
   // Eastern Sweets
   // =========================
   {
-    id: 24,
-    name: "بكج العيد الفاخر",
-    category: "aidPackages",
-    price: "150 ₪",
-    image: "images/products/aid-packages/aid-package.png",
-    description: "بكج حلويات شرقية فاخر بتشكيلة مناسبة للضيافة والمناسبات.",
-    featured: true,
-    emoji: "🍱"
-  },
-   {
-    id: 24,
-    name: "بكج العيد الفاخر",
-    category: "aidPackages",
-    price: "150 ₪",
-    image: "images/products/aid-packages/aid-package1.png",
-    description: "بكج حلويات شرقية فاخر بتشكيلة مناسبة للضيافة والمناسبات.",
-    featured: true,
-    emoji: "🍱"
-  },
-   {
-    id: 24,
-    name: "بكج العيد الفاخر",
-    category: "aidPackages",
-    price: "150 ₪",
-    image: "images/products/aid-packages/aid-package2.png",
-    description: "بكج حلويات شرقية فاخر بتشكيلة مناسبة للضيافة والمناسبات.",
-    featured: true,
-    emoji: "🍱"
-  },
-  {
-    id: 25,
-    name: "بكج العيد المشكل",
-    category: "aidPackages",
-    price: "150 ₪",
-    image: "images/products/aid-packages/aid-package3.png",
-    description: "تشكيلة عيد متنوعة من الحلويات الشرقية بتقديم أنيق وطعم غني.",
-    featured: true,
-    emoji: "🍱"
-  },
-   {
-    id: 25,
-    name: "بكج العيد المشكل",
-    category: "aidPackages",
-    price: "150 ₪",
-    image: "images/products/aid-packages/aid-package4.png",
-    description: "تشكيلة عيد متنوعة من الحلويات الشرقية بتقديم أنيق وطعم غني.",
-    featured: true,
-    emoji: "🍱"
-  },
-
-
-  ////easten sweet
-  {
-    id: 26,
+    id: 40,
     name: "صينية عربية مشكلة",
     category: "eastenSweets",
-    price: "150 ₪",
+    price: "20 ₪",
     image: "images/products/easten-sweet/عربية.png",
-    description: "صينية عربية فاخرة تضم أصنافًا شرقية متعددة بطابع ضيافة أصيل.",
+    description: "صينية عربية مشكلة تضم أصنافًا شرقية متنوعة بطابع ضيافة أصيل.",
     featured: true,
     emoji: "🍽️"
   },
   {
-    id: 27,
+    id: 41,
     name: "كنافة",
     category: "eastenSweets",
-    price: "150 ₪",
+    price: "12 ₪",
     image: "images/products/easten-sweet/كنافة.png",
-    description: "كنافة ذهبية شهية بطبقة مقرمشة وحشوة ناعمة، تقدم بطعم شرقي أصيل.",
+    description: "كنافة شرقية ذهبية بطبقة مقرمشة وحشوة ناعمة.",
     featured: true,
     emoji: "🍮"
   },
   {
-    id: 28,
+    id: 42,
     name: "كلاج",
     category: "eastenSweets",
-    price: "150 ₪",
+    price: "12 ₪",
     image: "images/products/easten-sweet/كلاج.png",
-    description: "كلاج شرقي هش بطبقات رقيقة وحشوة لذيذة، مناسب للضيافة والمناسبات.",
+    description: "كلاج بالقشطة بطبقات رقيقة وهشة وطعم شرقي خفيف.",
     featured: false,
     emoji: "🥮"
   },
   {
-    id: 29,
+    id: 43,
     name: "نابلسية",
     category: "eastenSweets",
-    price: "150 ₪",
+    price: "20 ₪",
     image: "images/products/easten-sweet/نابلسية.png",
-    description: "حلوى نابلسية أصيلة بطعم غني وقوام مميز لعشاق الحلويات الشرقية.",
+    description: "كنافة نابلسية أصيلة بطعم غني وقوام مميز.",
     featured: false,
     emoji: "🍮"
   },
   {
-    id: 30,
+    id: 44,
     name: "نمورة",
     category: "eastenSweets",
-    price: "150 ₪",
+    price: "12 ₪",
     image: "images/products/easten-sweet/نمورة.png",
-    description: "نمورة شرقية طرية ومحلاة بالشيرة، بطعم تقليدي محبوب.",
+    description: "نمورة شرقية طرية ومحلاة بالشيرة بطعم تقليدي محبوب.",
     featured: false,
     emoji: "🍯"
   },
   {
-    id: 31,
+    id: 45,
     name: "حلويات مشكل",
     category: "eastenSweets",
-    price: "150 ₪",
+    price: "25 ₪",
     image: "images/products/easten-sweet/حلويات-مشكل.png",
-    description: "تشكيلة حلويات شرقية متنوعة تجمع أكثر من نكهة في طبق واحد.",
-    featured: false,
+    description: "تشكيلة حلويات شرقية متنوعة مناسبة للضيافة.",
+    featured: true,
     emoji: "🍬"
   },
   {
-    id: 32,
+    id: 46,
     name: "بقلاوة بالجبن",
     category: "eastenSweets",
-    price: "150 ₪",
+    price: "25 ₪",
     image: "images/products/easten-sweet/بقلاوة-بالجبن.png",
-    description: "بقلاوة محشوة بالجبن بطبقات مقرمشة وشيرة خفيفة، بطعم شرقي فاخر.",
+    description: "بقلاوة محشوة بالجبن بطبقات مقرمشة وشيرة خفيفة.",
     featured: false,
     emoji: "🥮"
   },
   {
-    id: 33,
+    id: 47,
     name: "بقلاوة تركية",
     category: "eastenSweets",
-    price: "150 ₪",
+    price: "23 ₪",
     image: "images/products/easten-sweet/بقلاوة-تركية.png",
-    description: "بقلاوة تركية بطبقات رقيقة ومكسرات غنية، مثالية للضيافة الفاخرة.",
+    description: "بقلاوة تركية بطبقات رقيقة ومذاق فاخر مناسب للضيافة.",
     featured: false,
     emoji: "🥮"
   },
   {
-    id: 34,
+    id: 48,
     name: "بسبوسة بالقشطة",
     category: "eastenSweets",
-    price: "150 ₪",
+    price: "12 ₪",
     image: "images/products/easten-sweet/بسبوسة-قشطة.png",
-    description: "بسبوسة ناعمة محشوة بالقشطة ومحلاة بالشيرة، بطعم غني وقوام طري.",
+    description: "بسبوسة بالقشطة طرية ومحلاة بالشيرة بطعم غني.",
     featured: false,
     emoji: "🍰"
   }
 ];
-
 
 // Create a unique internal ID for every product.
 // This fixes repeated product ids and makes Details open the correct item.
