@@ -666,7 +666,7 @@ body::before{
       <button class="filter-btn" data-category="milkshake">ميلك شيك</button>
       <button class="filter-btn" data-category="eastenSweets">حلويات شرقية</button>
       <button class="filter-btn" data-category="aidPackages">بكجات العيد</button>
-      <button class="filter-btn" data-category="westernSweets">حلويات غربية</button>
+      <!-- <button class="filter-btn" data-category="westernSweets">حلويات غربية</button> -->
       <!-- <button class="filter-btn" data-category="cold">مشروبات باردة</button> -->
         <!-- <button class="filter-btn" data-category="hot">مشروبات ساخنة</button> -->
        <button class="filter-btn" data-category="waffle">وافل</button>
@@ -711,7 +711,7 @@ body::before{
           <a href="https://wa.me/972569896990" target="_blank" rel="noopener" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
           <a href="https://instagram.com/dahabsweets" target="_blank" rel="noopener" aria-label="إنستاغرام"><i class="fab fa-instagram"></i></a>
           <a href="#" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
-          <a href="#" aria-label="سناب شات"><i class="fab fa-snapchat-ghost"></i></a>
+         
         </div>
       </div>
     </div>
@@ -749,9 +749,9 @@ body::before{
 const WHATSAPP_NUMBER = "972569896990";
 
 const heroBackgrounds = [
+  "images/hero-bg.png",
   "images/hero-bg-cake.png",
-  "images/hero-bg-2.png",
-  "images/hero-bg-3.png"
+  "images/hero-bg-packages.png"
 ];
 
 const heroBg = document.getElementById("heroBg");
@@ -778,8 +778,8 @@ if(heroBg){
 const categoryLabels = {
   milkshake:"ميلك شيك", waffle:"وافل", crepe:"كريب",
   pancake:"بان كيك", icecream:"آيس كريم", cake:"كيك",
-  westernSweets: "حلويات غربية", eastenSweets: "حلويات شرقية",
-  hot:"مشروبات ساخنة", cold:"مشروبات باردة", offers:"عروض خاصة",
+  eastenSweets: "حلويات شرقية", hot:"مشروبات ساخنة", 
+  cold:"مشروبات باردة", offers:"عروض خاصة",
   aidPackages:"بكجات العيد" ,cheaseCake:"تشيز كيك",
   miniCake:"ميني كيك"
 };
@@ -1138,30 +1138,7 @@ const products = [
     emoji: "🧊"
   },
 
-  // =========================
-  // Offers
-  // =========================
-  {
-    id: 33,
-    name: "عرض الثنائي — كريب + ميلك شيك",
-    category: "offers",
-    price: "45 ₪",
-    image: "images/milkshake.png",
-    description: "عرض يجمع كريب نوتيلا مع ميلك شيك من اختيارك بسعر مناسب.",
-    featured: true,
-    emoji: "🎁"
-  },
-  {
-    id: 34,
-    name: "عرض العائلة — 4 أصناف",
-    category: "offers",
-    price: "95 ₪",
-    image: "images/milkshake.png",
-    description: "عرض عائلي مناسب للمشاركة، اختر 4 أصناف من المنيو.",
-    featured: true,
-    emoji: "👨‍👩‍👧‍👦"
-  },
-
+  
   // =========================
   // Eid Packages
   // =========================
