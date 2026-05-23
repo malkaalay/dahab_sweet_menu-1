@@ -1770,7 +1770,7 @@ const BRANCHES = [
   { id: "nuseirat", name: "فرع النصيرات", area: "النصيرات", phone: "972569896990" },
   { id: "deir_al_balah", name: "فرع دير البلح", area: "دير البلح", phone: "972569896990" },
   { id: "gaza_al_nasr", name: "فرع غزة النصر", area: "غزة - النصر", phone: "972569896990" },
-  { id: "branch_4", name: "الفرع الرابع", area: "ضع اسم الفرع هنا", phone: "972569896990" }
+  { id: "al_samer", name: "فرع السامر", area: "غزة - السامر ", phone: "972569896990" }
 ];
 
 let pendingWhatsappMessage = "";
@@ -3452,7 +3452,7 @@ observeReveal();
     { id: "nuseirat", name: "فرع النصيرات", area: "النصيرات", phone: "972569896990" },
     { id: "deir_al_balah", name: "فرع دير البلح", area: "دير البلح", phone: "972569896990" },
     { id: "gaza_al_nasr", name: "فرع غزة النصر", area: "غزة - النصر", phone: "972569896990" },
-    { id: "branch_4", name: "الفرع الرابع", area: "قريباً", phone: "972569896990" }
+    { id: "al_samer", name: "فرع السامر", area: "غزة- السامر ", phone: "972569896990" }
   ];
   const WESTERN_CATEGORIES_FIX = ["milkshake","waffle","crepe","miniCake","miniPanCake","icecream","cake","cheaseCake"];
   const WESTERN_BRANCHES_FIX = ["nuseirat","deir_al_balah"];
@@ -3743,7 +3743,7 @@ observeReveal();
     function setUI(isPlaying){
       btn.classList.toggle('playing', !!isPlaying);
       btn.innerHTML = isPlaying ? '<i class="fa fa-pause"></i>' : '<i class="fa fa-music"></i>';
-      btn.setAttribute('aria-label', isPlaying ? 'إيقاف موسيقى العيد' : 'تشغيل موسيقى العيد');
+      btn.setAttribute('aria-label', isPlaying ? 'إيقاف موسيقى ' : 'تشغيل موسيقى ');
       if(status){
         status.innerHTML = isPlaying ? 'موسيقى العيد<span>اضغط للإيقاف</span>' : 'موسيقى العيد<span>اضغط للتشغيل</span>';
       }
