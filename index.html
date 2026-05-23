@@ -1358,13 +1358,47 @@ body{overflow-x:hidden;}
 .eid-btn.primary{background:linear-gradient(135deg,#8b5a20,#d4a044);color:#140702;box-shadow:0 0 26px rgba(185,130,36,.26);}
 .eid-btn.secondary{background:rgba(185,130,36,.12);color:#f3d28a;}
 .eid-btn:hover{transform:translateY(-3px);filter:brightness(1.08);}
-.eid-visual{position:relative;min-height:240px;display:flex;align-items:center;justify-content:center;}
-.eid-moon{width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 34% 30%,#fff1b9,#d49b35 72%);box-shadow:0 0 60px rgba(243,198,107,.38);animation:eidFloat 3.8s ease-in-out infinite;}
-.eid-moon::after{content:"";position:absolute;width:128px;height:128px;border-radius:50%;background:#160904;transform:translate(36px,-10px);}
-.eid-ring{position:absolute;width:230px;height:230px;border:1px solid rgba(243,198,107,.32);border-radius:50%;animation:eidRotate 13s linear infinite;}
+.eid-visual{position:relative;min-height:270px;display:flex;align-items:center;justify-content:center;isolation:isolate;}
+.eid-package-orb{
+  position:relative;
+  width:270px;
+  height:270px;
+  border-radius:50%;
+  overflow:hidden;
+  border:1px solid rgba(243,198,107,.55);
+  background:rgba(18,8,4,.72);
+  box-shadow:0 0 55px rgba(243,198,107,.24),0 22px 70px rgba(0,0,0,.44),inset 0 0 34px rgba(243,198,107,.12);
+  animation:eidFloat 3.8s ease-in-out infinite;
+}
+.eid-package-orb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:36% center;
+  transform:scale(1.12);
+  filter:saturate(1.08) contrast(1.06) brightness(.98);
+}
+.eid-package-orb::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 30% 22%,rgba(255,240,190,.22),transparent 34%),linear-gradient(180deg,transparent 45%,rgba(8,4,1,.38));
+  pointer-events:none;
+}
+.eid-package-orb::after{
+  content:"";
+  position:absolute;
+  inset:-45%;
+  background:linear-gradient(90deg,transparent 35%,rgba(255,232,170,.20),transparent 62%);
+  transform:rotate(24deg) translateX(-70%);
+  animation:eidImageShine 4.8s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes eidImageShine{0%,42%{transform:rotate(24deg) translateX(-72%)}70%,100%{transform:rotate(24deg) translateX(72%)}}
+.eid-ring{position:absolute;width:320px;height:320px;border:1px solid rgba(243,198,107,.32);border-radius:50%;animation:eidRotate 13s linear infinite;z-index:-1;}
 .eid-ring::before,.eid-ring::after{content:"✦";position:absolute;color:#f3c66b;text-shadow:0 0 16px rgba(243,198,107,.6);}
-.eid-ring::before{top:18px;right:26px}.eid-ring::after{bottom:18px;left:32px}
-@keyframes eidFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+.eid-ring::before{top:24px;right:40px}.eid-ring::after{bottom:28px;left:42px}
+@keyframes eidFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-12px) scale(1.015)}}
 @keyframes eidRotate{to{transform:rotate(360deg)}}
 .eid-audio-widget{position:fixed;right:22px;bottom:24px;z-index:1200;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:999px;background:rgba(15,7,3,.84);border:1px solid rgba(243,198,107,.38);backdrop-filter:blur(10px);box-shadow:0 12px 38px rgba(0,0,0,.45),0 0 24px rgba(185,130,36,.15);animation:eidAudioPop .7s ease both;}
 @keyframes eidAudioPop{from{opacity:0;transform:translateY(16px) scale(.92)}to{opacity:1;transform:translateY(0) scale(1)}}
@@ -1372,7 +1406,7 @@ body{overflow-x:hidden;}
 .eid-audio-btn.playing{animation:eidPulse 1.5s ease-in-out infinite;}
 @keyframes eidPulse{0%,100%{box-shadow:0 0 10px rgba(185,130,36,.24)}50%{box-shadow:0 0 30px rgba(243,198,107,.55)}}
 .eid-audio-text{font-size:.8rem;font-weight:900;color:#f3d28a;line-height:1.2}.eid-audio-text span{display:block;font-weight:600;color:rgba(248,228,183,.55);font-size:.7rem;}
-@media(max-width:760px){.eid-card{grid-template-columns:1fr;text-align:center;padding:26px 18px}.eid-actions{justify-content:center}.eid-visual{min-height:200px}.eid-moon{width:145px;height:145px}.eid-ring{width:205px;height:205px}.eid-audio-widget{right:14px;bottom:74px}.eid-audio-text{display:none}}
+@media(max-width:760px){.eid-card{grid-template-columns:1fr;text-align:center;padding:26px 18px}.eid-actions{justify-content:center}.eid-visual{min-height:230px}.eid-package-orb{width:220px;height:220px}.eid-ring{width:260px;height:260px}.eid-audio-widget{right:14px;bottom:74px}.eid-audio-text{display:none}}
 
 
 
@@ -1480,7 +1514,9 @@ section, .section, .featured-section, .menu-section, .custom-orders-cta, .custom
       </div>
       <div class="eid-visual" aria-hidden="true">
         <div class="eid-ring"></div>
-        <div class="eid-moon"></div>
+        <div class="eid-package-orb">
+          <img src="images/hero-bg-packages.png" alt="ضيافة عيد الأضحى من دهب" />
+        </div>
       </div>
     </div>
   </div>
@@ -1692,7 +1728,7 @@ section, .section, .featured-section, .menu-section, .custom-orders-cta, .custom
     </div>
     <div class="branch-availability-note" id="branchAvailabilityNote" style="display:none"></div>
     <div class="branch-list" id="branchList"></div>
-    <div class="branch-hint">كـــــــل عـــــام وأنتــــم بخـــــر</div>
+    <div class="branch-hint">ملاحظة: عدّل أرقام الفروع من متغير BRANCHES داخل الكود عند استلام الأرقام النهائية.</div>
   </div>
 </div>
 
@@ -1715,7 +1751,7 @@ section, .section, .featured-section, .menu-section, .custom-orders-cta, .custom
 </div>
 
 
-<audio id="eidAudio" src="images/audio/eid.mp3" preload="none" loop></audio>
+<audio id="eidAudio" src="audio/eid.mp3" preload="none" loop></audio>
 <div class="eid-audio-widget" id="eidAudioWidget">
   <button class="eid-audio-btn" id="eidAudioBtn" type="button" aria-label="تشغيل موسيقى العيد"><i class="fa fa-music"></i></button>
   <div class="eid-audio-text" id="eidAudioStatus">موسيقى العيد<span>اضغط للتشغيل</span></div>
@@ -3071,7 +3107,8 @@ observeReveal();
 
 
 <script>
-
+/* Final root path protection for the local DAHABMENU folder.
+   Your structure is: index.html + images/products/... + audio/eid.mp3 */
 (function(){
   const imageFixes = {
     'images/coffee.big.png': 'images/coffee-big.png',
@@ -3206,5 +3243,538 @@ observeReveal();
   window.addEventListener('load',boot);
 })();
 </script>
+
+
+<style id="dahab-real-final-display-fix">
+  body{min-height:100vh !important;}
+  section,.section,footer,#featured,#menu,#customOrders,#customExamples,#eidAdha{display:block !important;visibility:visible !important;opacity:1 !important;}
+  .container,.section-heading,.hero-content,.eid-card,.custom-orders-card,.custom-examples-grid,#featuredGrid,#productsGrid{visibility:visible !important;opacity:1 !important;}
+  .reveal-up,.reveal-section,.reveal-card,.product-card,.featured-card,.custom-example-card{opacity:1 !important;visibility:visible !important;filter:none !important;}
+  #productsGrid,.products-grid,#featuredGrid,.featured-grid{display:grid !important;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px;min-height:160px;}
+  .product-card,.featured-card{transform:none;animation:dahabFinalCardShow .7s ease both;}
+  @keyframes dahabFinalCardShow{from{opacity:0;transform:translateY(24px) scale(.98);filter:blur(8px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+
+
+/* ===== Mobile-only sizing fix ===== */
+@media (max-width: 760px){
+  .eid-section{
+    padding: 52px 0 !important;
+  }
+  .eid-card{
+    width: calc(100% - 24px) !important;
+    margin: 0 auto !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    padding: 22px 16px !important;
+    border-radius: 22px !important;
+    text-align: center !important;
+  }
+  .eid-title{
+    font-size: clamp(1.55rem, 8vw, 2.25rem) !important;
+    line-height: 1.25 !important;
+  }
+  .eid-text{
+    font-size: .92rem !important;
+    line-height: 1.85 !important;
+    margin-inline: auto !important;
+  }
+  .eid-actions{
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+  .eid-btn{
+    width: 100% !important;
+    max-width: 260px !important;
+    padding: 12px 14px !important;
+  }
+  .eid-visual{
+    min-height: 190px !important;
+    order: -1 !important;
+  }
+  .eid-package-orb{
+    width: 178px !important;
+    height: 178px !important;
+    border-radius: 50% !important;
+  }
+  .eid-package-orb img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 40% 50% !important;
+  }
+  .eid-ring{
+    width: 210px !important;
+    height: 210px !important;
+  }
+  .eid-audio-widget{
+    right: 12px !important;
+    bottom: 76px !important;
+    padding: 8px !important;
+    border-radius: 999px !important;
+  }
+  .eid-audio-btn{
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .eid-audio-text{
+    display: none !important;
+  }
+}
+
+@media (max-width: 420px){
+  .eid-card{
+    width: calc(100% - 16px) !important;
+    padding: 20px 12px !important;
+  }
+  .eid-package-orb{
+    width: 154px !important;
+    height: 154px !important;
+  }
+  .eid-ring{
+    width: 185px !important;
+    height: 185px !important;
+  }
+}
+</style>
+<script id="dahab-real-final-render-fix">
+(function(){
+  function getProducts(){
+    try{
+      if(typeof products !== 'undefined' && Array.isArray(products)) return products;
+    }catch(e){}
+    if(Array.isArray(window.products)) return window.products;
+    return [];
+  }
+  function getLabels(){
+    try{ if(typeof categoryLabels !== 'undefined') return categoryLabels; }catch(e){}
+    return window.categoryLabels || {};
+  }
+  function safe(v){ return String(v == null ? '' : v); }
+  function imgHTML(p, cls){
+    var image = safe(p.image || '').trim();
+    if(image){
+      return '<img src="'+image+'" alt="'+safe(p.name || 'منتج')+'" loading="lazy" onerror="this.outerHTML=\'<div class=&quot;'+cls+'&quot;>'+safe(p.emoji || '🍰')+'</div>\'">';
+    }
+    return '<div class="'+cls+'">'+safe(p.emoji || '🍰')+'</div>';
+  }
+  function priceText(p){
+    if(Array.isArray(p.sizes) && p.sizes.length && p.sizes[0].price) return 'ابتداءً من '+p.sizes[0].price;
+    return safe(p.price || '');
+  }
+  function sizesHTML(p, cls){
+    if(!Array.isArray(p.sizes) || !p.sizes.length) return '';
+    return '<div class="'+cls+'">'+p.sizes.map(function(s){
+      return '<span class="size-chip"><b>'+safe(s.label || s.name || 'حجم')+'</b><small>'+safe(s.size ? s.size+' · ' : '')+safe(s.pieces ? s.pieces+' قطعة · ' : '')+safe(s.price || '')+'</small></span>';
+    }).join('')+'</div>';
+  }
+  function productCard(p,i){
+    var labels=getLabels(), id=safe(p.uid || p.id || (i+1));
+    return '<div class="product-card visible reveal-card" data-product-id="'+id+'">'
+      + '<div class="product-image-wrap">'+imgHTML(p,'product-image-placeholder')+'<div class="product-cat-badge">'+safe(labels[p.category] || p.category || 'منتج')+'</div></div>'
+      + '<div class="product-body"><h3 class="product-name">'+safe(p.name || 'منتج')+'</h3>'
+      + '<p class="product-description">'+safe(p.description || '')+'</p>'
+      + sizesHTML(p,'product-size-options')
+      + '<div class="product-footer"><span class="product-price">'+priceText(p)+'</span>'
+      + '<div class="product-actions"><button type="button" class="product-btn-details js-open-product" data-product-id="'+id+'"><i class="fa fa-info-circle"></i> التفاصيل</button>'
+      + '<button type="button" class="product-btn-whatsapp js-product-whatsapp" data-product-id="'+id+'" aria-label="اطلب عبر واتساب"><i class="fab fa-whatsapp"></i></button></div></div></div></div>';
+  }
+  function featuredCard(p,i){
+    var id=safe(p.uid || p.id || (i+1));
+    return '<div class="featured-card visible reveal-card" data-product-id="'+id+'">'
+      + '<div class="featured-card-image-wrap">'+imgHTML(p,'featured-card-image-placeholder')+'<div class="featured-badge">الأكثر طلباً ★</div></div>'
+      + '<div class="featured-card-body"><h3 class="featured-card-name">'+safe(p.name || 'منتج')+'</h3>'
+      + '<p class="featured-card-description">'+safe(p.description || '')+'</p>'
+      + sizesHTML(p,'featured-size-options')
+      + '<div class="featured-card-footer"><span class="featured-card-price">'+priceText(p)+'</span>'
+      + '<button type="button" class="featured-card-btn js-open-product" data-product-id="'+id+'">التفاصيل</button></div></div></div>';
+  }
+  function renderAll(){
+    var list=getProducts();
+    if(!list.length) return;
+    list.forEach(function(p,i){ if(!p.uid) p.uid = p.id || (i+1); });
+    var fg=document.getElementById('featuredGrid');
+    if(fg){
+      var f=list.filter(function(p){return !!p.featured;});
+      if(!f.length) f=list.slice(0,4);
+      fg.innerHTML=f.map(featuredCard).join('');
+    }
+    var pg=document.getElementById('productsGrid');
+    if(pg){
+      pg.innerHTML=list.map(productCard).join('');
+    }
+    var empty=document.getElementById('emptyState');
+    if(empty) empty.style.display='none';
+    document.querySelectorAll('section,.section,footer,.reveal-up,.reveal-section,.reveal-card,.product-card,.featured-card').forEach(function(el){
+      el.classList.add('visible'); el.style.opacity='1'; el.style.visibility='visible';
+    });
+  }
+  function bindSimpleFilters(){
+    var input=document.getElementById('searchInput');
+    var buttons=[].slice.call(document.querySelectorAll('.filter-btn'));
+    function apply(){
+      var all=getProducts();
+      var active=document.querySelector('.filter-btn.active');
+      var cat=active ? active.getAttribute('data-category') : 'all';
+      var q=(input && input.value ? input.value : '').trim().toLowerCase();
+      var list=all.filter(function(p){
+        var okCat=(cat==='all' || p.category===cat);
+        var txt=(safe(p.name)+' '+safe(p.description)).toLowerCase();
+        return okCat && (!q || txt.indexOf(q)>-1);
+      });
+      var pg=document.getElementById('productsGrid');
+      if(pg) pg.innerHTML=list.map(productCard).join('');
+      var empty=document.getElementById('emptyState');
+      if(empty) empty.style.display=list.length?'none':'block';
+    }
+    buttons.forEach(function(b){
+      if(b.dataset.boundFinal) return;
+      b.dataset.boundFinal='1';
+      b.addEventListener('click',function(){buttons.forEach(function(x){x.classList.remove('active')});b.classList.add('active');apply();});
+    });
+    if(input && !input.dataset.boundFinal){ input.dataset.boundFinal='1'; input.addEventListener('input',apply); }
+  }
+  function boot(){ renderAll(); bindSimpleFilters(); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();
+  window.addEventListener('load',boot);
+  setTimeout(boot,100);
+  setTimeout(boot,500);
+  setTimeout(boot,1200);
+})();
+</script>
+
+
+
+<script>
+/* ===== FINAL WHATSAPP CTA FIX =====
+   This block runs in capture mode so the smooth-scroll links cannot block WhatsApp actions. */
+(function(){
+  const FALLBACK_BRANCHES = [
+    { id: "nuseirat", name: "فرع النصيرات", area: "النصيرات", phone: "972569896990" },
+    { id: "deir_al_balah", name: "فرع دير البلح", area: "دير البلح", phone: "972569896990" },
+    { id: "gaza_al_nasr", name: "فرع غزة النصر", area: "غزة - النصر", phone: "972569896990" },
+    { id: "branch_4", name: "الفرع الرابع", area: "قريباً", phone: "972569896990" }
+  ];
+  const WESTERN_CATEGORIES_FIX = ["milkshake","waffle","crepe","miniCake","miniPanCake","icecream","cake","cheaseCake"];
+  const WESTERN_BRANCHES_FIX = ["nuseirat","deir_al_balah"];
+  let fixedPendingMessage = "";
+  let fixedPendingProduct = null;
+
+  function getBranches(){
+    try { return Array.isArray(BRANCHES) && BRANCHES.length ? BRANCHES : FALLBACK_BRANCHES; }
+    catch(e){ return FALLBACK_BRANCHES; }
+  }
+  function getProducts(){
+    try { return Array.isArray(products) ? products : []; }
+    catch(e){ return []; }
+  }
+  function getCategoryLabel(cat){
+    try { return (categoryLabels && categoryLabels[cat]) ? categoryLabels[cat] : cat; }
+    catch(e){ return cat; }
+  }
+  function isWestern(product){
+    return !!product && WESTERN_CATEGORIES_FIX.includes(product.category);
+  }
+  function branchAllowed(branch, product){
+    if(!isWestern(product)) return true;
+    return WESTERN_BRANCHES_FIX.includes(branch.id);
+  }
+  function waUrl(phone, msg){
+    return "https://wa.me/" + String(phone).replace(/\D/g, "") + "?text=" + encodeURIComponent(msg || "السلام عليكم، بدي أطلب من عندكم");
+  }
+  function publicImageUrl(src){
+    if(!src) return "";
+    try { return new URL(src, window.location.href).href; }
+    catch(e){ return src; }
+  }
+  function productById(id){
+    const list = getProducts();
+    return list.find(p => String(p.uid ?? p.id) === String(id));
+  }
+  function sizesText(product){
+    if(product && Array.isArray(product.sizes) && product.sizes.length){
+      return "الأحجام المتوفرة:" + product.sizes.map(s => {
+        const parts = [s.label, s.dimensions, s.pieces, s.price].filter(Boolean);
+        return "\n• " + parts.join(" - ");
+      }).join("");
+    }
+    return "السعر: " + ((product && product.price) ? product.price : "حسب الطلب");
+  }
+  function productMessage(product){
+    if(!product) return specialMessage();
+    return [
+      "السلام عليكم، يعطيكم العافية",
+      "حبيت أطلب من عندكم:",
+      "",
+      "المنتج: " + (product.name || ""),
+      product.category ? "القسم: " + getCategoryLabel(product.category) : "",
+      sizesText(product),
+      product.description ? "ملاحظة عن المنتج: " + product.description : "",
+      product.image ? "صورة المنتج: " + publicImageUrl(product.image) : "",
+      "",
+      "الاسم:",
+      "العنوان:",
+      "وقت الاستلام المناسب:",
+      "ملاحظات:"
+    ].filter(Boolean).join("\n");
+  }
+  function specialMessage(){
+    return [
+      "السلام عليكم، يعطيكم العافية",
+      "بدي أعمل طلب خاص لمناسبة.",
+      "",
+      "نوع المناسبة:",
+      "التصميم أو الفكرة:",
+      "النكهة المطلوبة:",
+      "الحجم / عدد القطع:",
+      "الاسم على الكيك:",
+      "موعد الاستلام:",
+      "العنوان:",
+      "ملاحظات:"
+    ].join("\n");
+  }
+  function renderBranchModal(product){
+    const list = document.getElementById("branchList");
+    if(!list) return;
+    const note = document.getElementById("branchAvailabilityNote");
+    if(note){
+      note.style.display = isWestern(product) ? "block" : "none";
+      note.innerHTML = '<i class="fa fa-circle-info"></i> هذا النوع متوفر حالياً في فرع النصيرات وفرع دير البلح فقط. باقي الفروع قريباً.';
+    }
+    list.innerHTML = getBranches().map((b,i)=>{
+      const allowed = branchAllowed(b, product);
+      return `
+        <button type="button" class="branch-card${allowed ? "" : " branch-disabled"}" data-fixed-branch-index="${i}" data-disabled="${allowed ? "0" : "1"}">
+          <strong>${b.name}</strong>
+          <span>${b.area || ""}</span>
+          ${allowed
+            ? `<em><i class="fab fa-whatsapp"></i> إرسال لهذا الفرع</em>`
+            : `<span class="branch-soon"><i class="fa fa-lock"></i> قريباً لهذا النوع</span>`}
+        </button>`;
+    }).join("");
+  }
+  function openFixedBranchPicker(message, product){
+    fixedPendingMessage = message || specialMessage();
+    fixedPendingProduct = product || null;
+    renderBranchModal(fixedPendingProduct);
+    const overlay = document.getElementById("branchModalOverlay");
+    if(overlay){
+      overlay.classList.add("open");
+      overlay.style.opacity = "1";
+      overlay.style.pointerEvents = "all";
+      document.body.style.overflow = "hidden";
+    } else {
+      const first = getBranches()[0];
+      window.open(waUrl(first.phone, fixedPendingMessage), "_blank");
+    }
+  }
+  function closeFixedBranchPicker(){
+    const overlay = document.getElementById("branchModalOverlay");
+    if(overlay){
+      overlay.classList.remove("open");
+      overlay.style.opacity = "";
+      overlay.style.pointerEvents = "";
+    }
+    fixedPendingProduct = null;
+    if(!document.getElementById("modalOverlay")?.classList.contains("open")) document.body.style.overflow = "";
+  }
+
+  document.addEventListener("click", function(e){
+    const branchCard = e.target.closest(".branch-card");
+    if(branchCard){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      if(branchCard.dataset.disabled === "1") return;
+      const index = branchCard.dataset.fixedBranchIndex ?? branchCard.dataset.branchIndex;
+      const branch = getBranches()[Number(index)];
+      if(branch) window.open(waUrl(branch.phone, fixedPendingMessage), "_blank", "noopener");
+      closeFixedBranchPicker();
+      return;
+    }
+
+    if(e.target.closest("#branchModalClose")){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      closeFixedBranchPicker();
+      return;
+    }
+
+    const overlay = document.getElementById("branchModalOverlay");
+    if(overlay && e.target === overlay){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      closeFixedBranchPicker();
+      return;
+    }
+
+    const productBtn = e.target.closest(".js-product-whatsapp, #modalWhatsapp");
+    if(productBtn){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      const product = productById(productBtn.dataset.productId);
+      openFixedBranchPicker(productMessage(product), product);
+      return;
+    }
+
+    const specialBtn = e.target.closest(".js-special-whatsapp, .js-example-whatsapp, .hero .btn-outline[href*='wa.me']");
+    if(specialBtn){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      const msg = specialBtn.dataset.message || specialMessage();
+      openFixedBranchPicker(msg, null);
+      return;
+    }
+  }, true);
+
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape") closeFixedBranchPicker();
+  });
+})();
+</script>
+
+
+
+<script id="dahab-audio-and-featured-details-final-fix">
+/* FINAL FIX: Eid audio + featured/product details buttons */
+(function(){
+  function qs(id){ return document.getElementById(id); }
+  function productList(){
+    try { if(typeof products !== 'undefined' && Array.isArray(products)) return products; } catch(e){}
+    return Array.isArray(window.products) ? window.products : [];
+  }
+  function labels(){
+    try { if(typeof categoryLabels !== 'undefined') return categoryLabels; } catch(e){}
+    return window.categoryLabels || {};
+  }
+  function byId(id){
+    const sid = String(id || '');
+    return productList().find(function(p, i){
+      return String(p.uid || p.id || (i + 1)) === sid;
+    });
+  }
+  function safe(v){ return String(v == null ? '' : v); }
+  function priceText(p){
+    if(p && Array.isArray(p.sizes) && p.sizes.length) return 'ابتداءً من ' + safe(p.sizes[0].price || p.price || '');
+    return safe(p && p.price ? p.price : 'حسب الطلب');
+  }
+  function sizesBlock(p){
+    if(!p || !Array.isArray(p.sizes) || !p.sizes.length) return '';
+    return '<div class="modal-size-options">' + p.sizes.map(function(s){
+      return '<span class="size-chip"><b>' + safe(s.label || 'حجم') + '</b><small>'
+        + [s.dimensions || s.size, s.pieces, s.price].filter(Boolean).map(safe).join(' · ')
+        + '</small></span>';
+    }).join('') + '</div>';
+  }
+  function openDetails(id){
+    const p = byId(id);
+    if(!p) return;
+
+    const overlay = qs('modalOverlay');
+    const img = qs('modalImage');
+    const cat = qs('modalCategory');
+    const name = qs('modalName');
+    const desc = qs('modalDescription');
+    const price = qs('modalPrice');
+    const whats = qs('modalWhatsapp');
+    if(!overlay || !name || !desc || !price) return;
+
+    const imageWrap = img ? img.closest('.modal-image-wrap') : null;
+    if(imageWrap) imageWrap.querySelectorAll('.modal-image-placeholder').forEach(function(x){ x.remove(); });
+
+    if(img){
+      if(p.image){
+        img.style.display = 'block';
+        img.src = p.image;
+        img.alt = safe(p.name || 'منتج');
+        img.onerror = function(){
+          img.style.display = 'none';
+          if(imageWrap && !imageWrap.querySelector('.modal-image-placeholder')){
+            const ph = document.createElement('div');
+            ph.className = 'modal-image-placeholder';
+            ph.textContent = p.emoji || '🍰';
+            imageWrap.insertBefore(ph, img);
+          }
+        };
+      }else{
+        img.removeAttribute('src');
+        img.style.display = 'none';
+      }
+    }
+
+    if(cat) cat.textContent = labels()[p.category] || p.category || 'منتج';
+    name.textContent = safe(p.name || 'منتج');
+    desc.innerHTML = safe(p.description || '') + sizesBlock(p);
+    price.innerHTML = priceText(p);
+    if(whats){
+      const realId = p.uid || p.id || id;
+      whats.href = '#branches';
+      whats.dataset.productId = realId;
+      whats.innerHTML = '<i class="fab fa-whatsapp"></i> إرسال بيانات المنتج للواتساب';
+    }
+    overlay.classList.add('open');
+    overlay.style.opacity = '1';
+    overlay.style.pointerEvents = 'all';
+    document.body.style.overflow = 'hidden';
+  }
+
+  window.openModal = openDetails;
+
+  document.addEventListener('click', function(e){
+    const btn = e.target.closest('.js-open-product, .featured-card-btn, .product-btn-details');
+    if(!btn) return;
+    const card = btn.closest('[data-product-id]');
+    const id = btn.dataset.productId || (card && card.dataset.productId);
+    if(!id) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    openDetails(id);
+  }, true);
+
+  function setupAudio(){
+    const audio = qs('eidAudio');
+    const btn = qs('eidAudioBtn');
+    const status = qs('eidAudioStatus');
+    if(!audio || !btn) return;
+
+    audio.src = 'audio/eid.mp3';
+    audio.loop = true;
+    audio.preload = 'auto';
+    audio.volume = 0.45;
+
+    function setUI(isPlaying){
+      btn.classList.toggle('playing', !!isPlaying);
+      btn.innerHTML = isPlaying ? '<i class="fa fa-pause"></i>' : '<i class="fa fa-music"></i>';
+      btn.setAttribute('aria-label', isPlaying ? 'إيقاف موسيقى العيد' : 'تشغيل موسيقى العيد');
+      if(status){
+        status.innerHTML = isPlaying ? 'موسيقى العيد<span>اضغط للإيقاف</span>' : 'موسيقى العيد<span>اضغط للتشغيل</span>';
+      }
+    }
+
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      if(!audio.paused){
+        audio.pause();
+        setUI(false);
+        return;
+      }
+      audio.play().then(function(){ setUI(true); }).catch(function(err){
+        console.warn('Audio play failed. Check file path: audio/eid.mp3', err);
+        setUI(false);
+        if(status) status.innerHTML = 'الصوت غير متاح<span>تأكد من audio/eid.mp3</span>';
+      });
+    }, true);
+
+    audio.addEventListener('ended', function(){ setUI(false); });
+    audio.addEventListener('pause', function(){ if(audio.paused) setUI(false); });
+    audio.addEventListener('play', function(){ setUI(true); });
+    setUI(false);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setupAudio);
+  else setupAudio();
+  window.addEventListener('load', setupAudio);
+})();
+</script>
+
 </body>
 </html>
