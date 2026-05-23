@@ -305,6 +305,329 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .empty-state h3{font-family:'Amiri',serif;font-size:1.4rem;color:var(--text-dark);margin-bottom:8px}
 .empty-state p{color:var(--text-light);font-size:.95rem}
 
+
+/* ---- PRODUCT SIZES + SPECIAL ORDERS CTA ---- */
+.product-size-options,
+.featured-size-options,
+.modal-size-options{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:7px;
+  flex-wrap:wrap;
+  margin:12px 0 14px;
+}
+.product-size-pill,
+.featured-size-pill,
+.modal-size-pill{
+  min-width:74px;
+  padding:8px 10px;
+  border-radius:11px;
+  border:1px solid rgba(185,130,36,.48);
+  background:linear-gradient(180deg,rgba(18,8,4,.72),rgba(58,28,8,.58));
+  color:#f3d28a;
+  font-size:.76rem;
+  font-weight:900;
+  line-height:1.35;
+  text-align:center;
+  box-shadow:inset 0 1px rgba(255,255,255,.04);
+}
+.product-size-pill span,
+.featured-size-pill span,
+.modal-size-pill span{
+  display:block;
+  margin-top:2px;
+  color:#d49735;
+  font-size:.78rem;
+  font-weight:900;
+}
+.product-size-pill small,
+.featured-size-pill small,
+.modal-size-pill small{
+  display:block;
+  margin-top:2px;
+  color:rgba(246,225,187,.66);
+  font-size:.68rem;
+  font-weight:800;
+}
+.modal-size-pill{min-width:112px;}
+.price-from-label{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  color:#a78445;
+  font-size:.78rem;
+  font-weight:800;
+}
+.price-from-label strong{
+  color:#d49735;
+  font-size:1.06rem;
+}
+.custom-orders-cta{
+  position:relative;
+  overflow:hidden;
+  padding:54px 0 96px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(243,198,107,.16),transparent 42%),
+    radial-gradient(circle at 14% 72%,rgba(185,130,36,.13),transparent 34%),
+    linear-gradient(180deg,rgba(9,5,2,0) 0%,rgba(24,11,4,.72) 42%,rgba(9,5,2,.96) 100%);
+}
+.custom-orders-cta::before{
+  content:"";
+  position:absolute;
+  top:0;
+  right:50%;
+  width:min(900px,88vw);
+  height:1px;
+  transform:translateX(50%);
+  background:linear-gradient(90deg,transparent,rgba(243,198,107,.82),transparent);
+  box-shadow:0 0 22px rgba(243,198,107,.38);
+  pointer-events:none;
+}
+.custom-orders-cta::after{
+  content:"";
+  position:absolute;
+  inset:10px auto auto 50%;
+  width:520px;
+  height:520px;
+  transform:translateX(-50%);
+  background:radial-gradient(circle,rgba(243,198,107,.13) 0%,rgba(185,130,36,.07) 36%,transparent 70%);
+  filter:blur(8px);
+  opacity:.75;
+  pointer-events:none;
+}
+.custom-orders-card{
+  position:relative;
+  z-index:1;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1.45fr auto;
+  align-items:center;
+  gap:22px;
+  padding:30px 34px;
+  border-radius:24px;
+  border:1px solid rgba(243,198,107,.42);
+  background:
+    radial-gradient(circle at 12% 25%,rgba(243,198,107,.18),transparent 34%),
+    linear-gradient(135deg,rgba(52,24,7,.92),rgba(13,6,2,.96));
+  box-shadow:0 24px 70px rgba(0,0,0,.48),0 0 52px rgba(185,130,36,.24), inset 0 0 0 1px rgba(255,218,136,.035);
+}
+.custom-orders-card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:linear-gradient(90deg,transparent,rgba(243,198,107,.12),transparent);
+  transform:translateX(80%);
+  animation:cta-shine 5s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes cta-shine{0%,60%{transform:translateX(90%)}100%{transform:translateX(-90%)}}
+.custom-orders-content{position:relative;z-index:1;text-align:right;}
+.custom-orders-kicker{display:inline-block;color:#d49735;font-weight:900;font-size:.85rem;margin-bottom:8px;letter-spacing:.04em;}
+.custom-orders-title{font-size:clamp(1.35rem,3vw,2.25rem);font-weight:900;color:#f3d28a;margin-bottom:8px;}
+.custom-orders-text{color:rgba(246,225,187,.72);font-size:.96rem;line-height:1.8;max-width:760px;}
+.custom-orders-actions{position:relative;z-index:1;display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end;}
+.custom-orders-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:168px;padding:13px 22px;border-radius:12px;font-weight:900;transition:all var(--transition);}
+.custom-orders-btn.primary{background:linear-gradient(135deg,#8b5a20,#d4a044,#f1c970);color:#160801;border:1px solid rgba(255,232,163,.35);box-shadow:0 10px 26px rgba(185,130,36,.24);}
+.custom-orders-btn.secondary{background:rgba(8,4,1,.42);color:#f3d28a;border:1px solid rgba(243,198,107,.38);}
+.custom-orders-btn:hover{transform:translateY(-3px);filter:brightness(1.08);}
+
+.custom-examples{
+  position:relative;
+  z-index:1;
+  margin-top:34px;
+  padding:26px 22px 4px;
+  border-radius:26px;
+  background:linear-gradient(180deg,rgba(243,198,107,.045),rgba(185,130,36,.018));
+  border:1px solid rgba(243,198,107,.12);
+}
+.custom-examples-head{
+  text-align:center;
+  margin-bottom:22px;
+}
+.custom-examples-head h3{
+  color:#f3d28a;
+  font-size:clamp(1.25rem,2.5vw,1.85rem);
+  font-weight:900;
+  margin-bottom:6px;
+}
+.custom-examples-head p{
+  color:rgba(246,225,187,.68);
+  font-size:.92rem;
+  line-height:1.8;
+}
+.custom-examples-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:18px;
+}
+.custom-example-card{
+  overflow:hidden;
+  border-radius:20px;
+  background:linear-gradient(180deg,rgba(42,19,6,.82),rgba(18,8,4,.94));
+  border:1px solid rgba(185,130,36,.38);
+  box-shadow:0 18px 48px rgba(0,0,0,.36),inset 0 0 0 1px rgba(255,218,136,.025);
+  transition:transform var(--transition),border-color var(--transition),box-shadow var(--transition);
+}
+.custom-example-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(243,198,107,.78);
+  box-shadow:0 24px 70px rgba(0,0,0,.55),0 0 30px rgba(185,130,36,.18);
+}
+.custom-example-img{
+  position:relative;
+  height:210px;
+  overflow:hidden;
+  background:radial-gradient(circle at 50% 50%,rgba(157,96,28,.35),rgba(12,6,2,.96) 74%);
+  border-bottom:1px solid rgba(185,130,36,.22);
+}
+.custom-example-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:saturate(1.06) contrast(1.04);
+  transition:transform .55s ease;
+}
+.custom-example-card:hover .custom-example-img img{transform:scale(1.06);}
+.custom-example-img::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0 0;
+  height:52%;
+  background:linear-gradient(180deg,transparent,rgba(9,5,2,.64));
+}
+.custom-example-tag{
+  position:absolute;
+  top:12px;
+  right:12px;
+  z-index:1;
+  padding:5px 12px;
+  border-radius:50px;
+  color:#f0c466;
+  background:rgba(8,4,1,.72);
+  border:1px solid rgba(243,198,107,.36);
+  font-size:.72rem;
+  font-weight:900;
+  backdrop-filter:blur(6px);
+}
+.custom-example-body{
+  padding:17px 18px 19px;
+  text-align:right;
+}
+.custom-example-body h4{
+  color:#f3d28a;
+  font-size:1.05rem;
+  font-weight:900;
+  margin-bottom:7px;
+}
+.custom-example-body p{
+  color:rgba(246,225,187,.68);
+  font-size:.84rem;
+  line-height:1.75;
+  margin-bottom:12px;
+}
+.custom-example-details{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+.custom-example-details span{
+  padding:6px 9px;
+  border-radius:10px;
+  background:rgba(185,130,36,.10);
+  border:1px solid rgba(185,130,36,.28);
+  color:#d8b36b;
+  font-size:.74rem;
+  font-weight:800;
+}
+@media(max-width:760px){
+  .custom-examples-grid{grid-template-columns:1fr 1fr;gap:12px;}
+  .custom-example-img{height:170px;}
+  .custom-example-body{padding:14px 12px;}
+  .custom-example-body h4{font-size:.95rem;}
+  .custom-example-body p{font-size:.78rem;}
+}
+@media(max-width:420px){.custom-examples-grid{grid-template-columns:1fr}.custom-example-img{height:210px}}
+
+.special-jump-cta{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin:0 0 28px;
+  padding:18px 22px;
+  border-radius:18px;
+  border:1px solid rgba(243,198,107,.34);
+  background:
+    radial-gradient(circle at 15% 20%,rgba(243,198,107,.16),transparent 34%),
+    linear-gradient(135deg,rgba(40,18,6,.86),rgba(12,6,2,.92));
+  box-shadow:0 16px 46px rgba(0,0,0,.35), inset 0 1px rgba(255,255,255,.035);
+}
+.special-jump-cta::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,transparent,rgba(243,198,107,.10),transparent);
+  transform:translateX(85%);
+  animation:cta-shine 5.5s ease-in-out infinite;
+  pointer-events:none;
+}
+.special-jump-text{position:relative;z-index:1;text-align:right;}
+.special-jump-text strong{display:block;color:#f3d28a;font-size:1.05rem;font-weight:900;margin-bottom:3px;}
+.special-jump-text span{display:block;color:rgba(246,225,187,.68);font-size:.86rem;line-height:1.6;}
+.special-jump-btn{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:160px;padding:12px 18px;border-radius:12px;background:linear-gradient(135deg,#8b5a20,#d4a044,#f1c970);color:#160801;font-weight:900;border:1px solid rgba(255,232,163,.35);box-shadow:0 10px 24px rgba(185,130,36,.22);transition:all var(--transition);}
+.special-jump-btn:hover{transform:translateY(-3px);filter:brightness(1.08);}
+@media(max-width:760px){
+  .special-jump-cta{flex-direction:column;text-align:center;padding:18px 16px;}
+  .special-jump-text{text-align:center;}
+  .special-jump-btn{width:100%;}
+}
+@media(max-width:760px){
+  .custom-orders-card{grid-template-columns:1fr;padding:24px 20px;text-align:center;}
+  .custom-orders-content{text-align:center;}
+  .custom-orders-actions{justify-content:center;}
+  .product-size-pill,.featured-size-pill{min-width:66px;padding:7px 8px;font-size:.72rem;}
+}
+
+
+
+/* ---- BRANCH PICKER / WHATSAPP ROUTING ---- */
+.branch-modal-overlay{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .32s ease;}
+.branch-modal-overlay.open{opacity:1;pointer-events:all;}
+.branch-modal{position:relative;width:min(560px,100%);border-radius:26px;border:1px solid rgba(243,198,107,.42);background:linear-gradient(180deg,rgba(38,17,5,.98),rgba(10,5,2,.98));box-shadow:0 34px 90px rgba(0,0,0,.72),0 0 46px rgba(185,130,36,.18);overflow:hidden;transform:translateY(24px) scale(.94);transition:transform .38s cubic-bezier(.34,1.56,.64,1);}
+.branch-modal-overlay.open .branch-modal{transform:translateY(0) scale(1);}
+.branch-modal::before{content:"";position:absolute;inset:-1px;background:radial-gradient(circle at 22% 0%,rgba(243,198,107,.18),transparent 36%),linear-gradient(90deg,transparent,rgba(243,198,107,.08),transparent);pointer-events:none;}
+.branch-modal-close{position:absolute;top:14px;left:14px;z-index:3;width:38px;height:38px;border-radius:50%;background:rgba(185,130,36,.13);border:1px solid rgba(243,198,107,.28);color:#f3c66b;display:flex;align-items:center;justify-content:center;transition:all var(--transition);}
+.branch-modal-close:hover{background:#d4a044;color:#150801;transform:rotate(90deg);}
+.branch-modal-head{position:relative;z-index:2;padding:30px 28px 18px;text-align:right;}
+.branch-modal-kicker{display:inline-flex;align-items:center;gap:7px;color:#d8a442;font-weight:900;font-size:.8rem;margin-bottom:8px;}
+.branch-modal-title{font-family:'Tajawal',sans-serif;color:#f3d28a;font-size:1.55rem;font-weight:900;margin-bottom:6px;}
+.branch-modal-text{color:rgba(246,225,187,.70);font-size:.9rem;line-height:1.7;}
+.branch-list{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 28px 28px;}
+.branch-card{position:relative;overflow:hidden;text-align:right;padding:16px 15px;border-radius:18px;border:1px solid rgba(185,130,36,.34);background:linear-gradient(135deg,rgba(54,26,8,.86),rgba(18,8,4,.9));color:#f7e1af;box-shadow:inset 0 1px rgba(255,255,255,.04);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;}
+.branch-card::after{content:"";position:absolute;top:-45%;right:-35%;width:120px;height:120px;border-radius:50%;background:rgba(243,198,107,.10);filter:blur(2px);transition:transform .35s ease;}
+.branch-card:hover{transform:translateY(-5px);border-color:rgba(243,198,107,.72);box-shadow:0 18px 38px rgba(0,0,0,.34),0 0 24px rgba(185,130,36,.16);}
+.branch-card:hover::after{transform:scale(1.35);}
+.branch-card strong{position:relative;z-index:1;display:block;color:#f3d28a;font-size:1rem;font-weight:900;margin-bottom:5px;}
+.branch-card span{position:relative;z-index:1;display:block;color:rgba(246,225,187,.68);font-size:.78rem;line-height:1.5;margin-bottom:12px;}
+.branch-card em{position:relative;z-index:1;display:inline-flex;align-items:center;gap:7px;font-style:normal;color:#150801;background:linear-gradient(135deg,#8b5a20,#d4a044,#f1c970);padding:8px 12px;border-radius:12px;font-weight:900;font-size:.82rem;}
+.branch-hint{position:relative;z-index:2;margin:0 28px 26px;padding:11px 13px;border-radius:14px;background:rgba(185,130,36,.08);border:1px dashed rgba(243,198,107,.27);color:rgba(246,225,187,.58);font-size:.78rem;text-align:center;}
+@media(max-width:600px){.branch-list{grid-template-columns:1fr;padding:0 18px 22px}.branch-modal-head{padding:28px 20px 16px}.branch-hint{margin:0 18px 22px}.branch-modal-title{font-size:1.28rem}}
+
+/* ---- WESTERN SWEETS BRANCH AVAILABILITY ---- */
+.availability-badge{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin:0 auto 10px;padding:7px 10px;border-radius:999px;border:1px solid rgba(243,198,107,.34);background:rgba(185,130,36,.10);color:#f1c970;font-size:.72rem;font-weight:900;line-height:1.4;box-shadow:0 0 18px rgba(185,130,36,.10);}
+.availability-badge i{font-size:.75rem;}
+.branch-card.branch-disabled{opacity:.62;cursor:not-allowed;filter:grayscale(.18);}
+.branch-card.branch-disabled:hover{transform:none;border-color:rgba(185,130,36,.28);box-shadow:inset 0 1px rgba(255,255,255,.04);}
+.branch-card.branch-disabled em{background:rgba(90,50,18,.65);color:rgba(246,225,187,.62);border:1px solid rgba(243,198,107,.20);}
+.branch-card .branch-soon{display:inline-flex;align-items:center;gap:6px;color:#f1c970;background:rgba(185,130,36,.10);border:1px solid rgba(243,198,107,.24);padding:7px 10px;border-radius:12px;font-weight:900;font-size:.78rem;}
+.branch-availability-note{position:relative;z-index:2;margin:0 28px 14px;padding:11px 13px;border-radius:14px;background:rgba(185,130,36,.10);border:1px solid rgba(243,198,107,.24);color:#f1c970;font-size:.82rem;text-align:center;font-weight:800;}
+@media(max-width:600px){.branch-availability-note{margin:0 18px 14px;}}
+
+
 /* ---- CONTACT ---- */
 .contact-section{background:var(--beige)}
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
@@ -547,7 +870,22 @@ body::before{
 .contact-card:hover{border-color:rgba(243,198,107,.70);box-shadow:0 24px 70px rgba(0,0,0,.52),0 0 30px rgba(185,130,36,.16)}
 .contact-card h3{color:#f2ca72}.contact-card p,.hours-row{color:rgba(246,225,187,.70)}.contact-action{color:#d49735}
 .contact-icon{background:rgba(185,130,36,.10)!important;color:#d8a442!important;border:1px solid rgba(185,130,36,.34)}
-.site-footer{background:linear-gradient(180deg,rgba(13,6,2,.82),#070301);border-top:1px solid rgba(185,130,36,.16);}
+.site-footer{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 78% 8%,rgba(243,198,107,.11),transparent 32%),
+    linear-gradient(180deg,rgba(18,8,4,.92),#070301);
+  border-top:1px solid rgba(243,198,107,.24);
+}
+.site-footer::before{
+  content:"";
+  position:absolute;
+  top:0;right:0;left:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(243,198,107,.74),transparent);
+  box-shadow:0 0 18px rgba(243,198,107,.35);
+}
+.site-footer .container{position:relative;z-index:1;}
 .footer-top{border-bottom:1px solid rgba(185,130,36,.16)}
 .footer-links h4,.footer-social h4{color:#d8a442}.footer-links a:hover{color:#f3c66b}
 .social-icons a{border-color:rgba(185,130,36,.42);color:#d8a442;background:rgba(185,130,36,.05)}
@@ -559,6 +897,497 @@ body::before{
   .site-header{padding:0 18px}.header-inner{height:70px}.hero{min-height:690px}.hero-content{align-items:center;text-align:center}.hero-divider{justify-content:center}.products-grid,.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.product-image-wrap,.featured-card-image-wrap{height:190px}.product-body,.featured-card-body{padding:14px 12px}.product-name,.featured-card-name{font-size:.98rem}.product-description,.featured-card-description{font-size:.78rem}.product-actions{gap:7px}.product-btn-details,.product-btn-whatsapp{padding:8px 10px;min-width:auto}.category-filters{overflow-x:auto;justify-content:flex-start;flex-wrap:nowrap;padding-bottom:8px}.filter-btn{flex:0 0 auto}
 }
 @media(max-width:420px){.products-grid,.featured-grid{grid-template-columns:1fr}.product-image-wrap,.featured-card-image-wrap{height:230px}}
+
+
+
+/* =====================================================
+   DAHAB PREMIUM MOTION PACK
+   cinematic gold balance, product shine, particles, tilt
+   ===================================================== */
+@media (prefers-reduced-motion: no-preference){
+  .btn-gold,
+  .custom-orders-btn.primary,
+  .modal-whatsapp,
+  .product-btn-whatsapp{
+    animation: dahabGlowPulse 2.8s ease-in-out infinite;
+  }
+
+  @keyframes dahabGlowPulse{
+    0%,100%{box-shadow:0 0 0 rgba(243,198,107,0),0 0 0 rgba(185,130,36,0)}
+    50%{box-shadow:0 0 24px rgba(243,198,107,.24),0 0 42px rgba(185,130,36,.16)}
+  }
+
+  .section-title::after{
+    content:"";
+    display:block;
+    width:132px;
+    height:2px;
+    margin:14px auto 0;
+    border-radius:999px;
+    background:linear-gradient(90deg,transparent,rgba(243,198,107,.96),transparent);
+    transform-origin:center;
+    animation:dahabGoldLine 2.6s ease-in-out infinite;
+  }
+
+  @keyframes dahabGoldLine{
+    0%,100%{opacity:.35;transform:scaleX(.62)}
+    50%{opacity:1;transform:scaleX(1)}
+  }
+
+  .product-card,
+  .featured-card,
+  .custom-example-card,
+  .contact-card{
+    transform-style:preserve-3d;
+    will-change:transform,box-shadow;
+  }
+
+  .product-image-wrap::before,
+  .featured-card-image-wrap::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:2;
+    pointer-events:none;
+    background:
+      radial-gradient(circle at 28% 28%,rgba(255,230,170,.10),transparent 28%),
+      linear-gradient(110deg,transparent 0%,transparent 38%,rgba(255,255,255,.18) 50%,transparent 62%,transparent 100%);
+    transform:translateX(-145%) skewX(-18deg);
+    opacity:.78;
+    animation:dahabProductShine 5.2s ease-in-out infinite;
+  }
+
+  @keyframes dahabProductShine{
+    0%,58%{transform:translateX(-145%) skewX(-18deg)}
+    78%,100%{transform:translateX(145%) skewX(-18deg)}
+  }
+
+  .product-image-wrap img,
+  .featured-card-image-wrap img{
+    will-change:transform,filter;
+  }
+
+  .product-card:hover .product-image-wrap img,
+  .featured-card:hover .featured-card-image-wrap img{
+    transform:scale(1.10) translateY(-3px);
+    filter:saturate(1.08) contrast(1.07) brightness(1.04);
+  }
+
+  .product-card::after,
+  .featured-card::after,
+  .custom-example-card::after{
+    content:"";
+    position:absolute;
+    inset:-1px;
+    pointer-events:none;
+    border-radius:inherit;
+    background:radial-gradient(circle at var(--mx,50%) var(--my,35%),rgba(243,198,107,.22),transparent 34%);
+    opacity:0;
+    transition:opacity .35s ease;
+    mix-blend-mode:screen;
+  }
+
+  .product-card:hover::after,
+  .featured-card:hover::after,
+  .custom-example-card:hover::after{opacity:1;}
+
+  .hero-main-logo{
+    animation:dahabLogoFloat 4.8s ease-in-out infinite;
+    filter:drop-shadow(0 0 22px rgba(243,198,107,.28));
+  }
+
+  @keyframes dahabLogoFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+  }
+
+  .hero-scroll-hint{animation:dahabScrollHint 2.2s ease-in-out infinite;}
+  @keyframes dahabScrollHint{
+    0%,100%{transform:translateX(-50%) translateY(0);box-shadow:0 0 0 rgba(243,198,107,0)}
+    50%{transform:translateX(-50%) translateY(8px);box-shadow:0 0 22px rgba(243,198,107,.22)}
+  }
+
+  .branch-modal-overlay.open .branch-card{
+    animation:dahabBranchIn .55s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  @keyframes dahabBranchIn{
+    from{opacity:0;transform:translateY(18px) scale(.96);filter:blur(8px)}
+    to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+  }
+
+  .modal-overlay.open .modal,
+  .branch-modal-overlay.open .branch-modal{
+    animation:dahabModalGlow .65s ease both;
+  }
+
+  @keyframes dahabModalGlow{
+    0%{filter:drop-shadow(0 0 0 rgba(243,198,107,0))}
+    55%{filter:drop-shadow(0 0 36px rgba(243,198,107,.20))}
+    100%{filter:drop-shadow(0 0 18px rgba(185,130,36,.12))}
+  }
+
+  .reveal-up,
+  .reveal-section,
+  .reveal-card,
+  .reveal-logo{
+    filter:blur(9px);
+  }
+
+  .reveal-up.visible,
+  .reveal-section.visible,
+  .reveal-card.visible,
+  .reveal-logo.visible{
+    filter:blur(0);
+  }
+}
+
+.gold-particles{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+  opacity:.72;
+}
+.gold-particle{
+  position:absolute;
+  bottom:-18px;
+  width:4px;
+  height:4px;
+  border-radius:999px;
+  background:rgba(243,198,107,.72);
+  box-shadow:0 0 14px rgba(243,198,107,.55);
+  animation:dahabParticleFloat linear infinite;
+}
+@keyframes dahabParticleFloat{
+  from{transform:translate3d(0,0,0) scale(.75);opacity:0}
+  12%{opacity:.85}
+  78%{opacity:.55}
+  to{transform:translate3d(var(--drift,18px),-108vh,0) scale(1.12);opacity:0}
+}
+.site-header,.hero,.section,footer,.modal-overlay,.branch-modal-overlay,.back-to-top{position:relative;z-index:1;}
+
+
+
+/* =====================================================
+   DAHAB MOTION VISIBILITY FIX - always visible premium animations
+   ===================================================== */
+body.premium-motion-ready .btn-gold,
+body.premium-motion-ready .custom-orders-btn.primary,
+body.premium-motion-ready .modal-whatsapp,
+body.premium-motion-ready .product-btn-whatsapp{
+  animation: dahabStrongGlow 2.4s ease-in-out infinite !important;
+}
+@keyframes dahabStrongGlow{
+  0%,100%{box-shadow:0 0 0 rgba(243,198,107,0),0 0 18px rgba(185,130,36,.10)}
+  50%{box-shadow:0 0 22px rgba(243,198,107,.42),0 0 48px rgba(185,130,36,.28)}
+}
+body.premium-motion-ready .section-title::after{
+  content:"";
+  display:block;
+  width:140px;
+  height:2px;
+  margin:14px auto 0;
+  border-radius:999px;
+  background:linear-gradient(90deg,transparent,#f3c66b,transparent);
+  animation:dahabLineBreath 2.1s ease-in-out infinite !important;
+}
+@keyframes dahabLineBreath{
+  0%,100%{opacity:.38;transform:scaleX(.58)}
+  50%{opacity:1;transform:scaleX(1.08)}
+}
+body.premium-motion-ready .product-card,
+body.premium-motion-ready .featured-card,
+body.premium-motion-ready .custom-example-card{
+  transform-style:preserve-3d;
+  will-change:transform,box-shadow;
+}
+body.premium-motion-ready .product-card:hover,
+body.premium-motion-ready .featured-card:hover,
+body.premium-motion-ready .custom-example-card:hover{
+  transform:translateY(-10px) scale(1.015) !important;
+  box-shadow:0 26px 76px rgba(0,0,0,.62),0 0 38px rgba(185,130,36,.28) !important;
+}
+body.premium-motion-ready .product-image-wrap,
+body.premium-motion-ready .featured-card-image-wrap{
+  position:relative;
+  overflow:hidden;
+}
+body.premium-motion-ready .product-image-wrap::before,
+body.premium-motion-ready .featured-card-image-wrap::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-130%;
+  width:70%;
+  height:100%;
+  z-index:4;
+  pointer-events:none;
+  background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.05) 34%,rgba(255,224,156,.32) 50%,rgba(255,255,255,.06) 66%,transparent 100%);
+  transform:skewX(-22deg);
+  animation:dahabVisibleShine 3.8s ease-in-out infinite !important;
+}
+@keyframes dahabVisibleShine{
+  0%,48%{left:-130%}
+  78%,100%{left:160%}
+}
+body.premium-motion-ready .hero-main-logo{
+  animation:dahabLogoFloatStrong 4s ease-in-out infinite !important;
+  filter:drop-shadow(0 0 28px rgba(243,198,107,.38));
+}
+@keyframes dahabLogoFloatStrong{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-12px) scale(1.015)}
+}
+body.premium-motion-ready .branch-modal-overlay.open .branch-modal,
+body.premium-motion-ready .modal-overlay.open .modal{
+  animation:dahabModalPopGlow .55s cubic-bezier(.22,1,.36,1) both !important;
+}
+@keyframes dahabModalPopGlow{
+  0%{opacity:.3;transform:translateY(30px) scale(.92);filter:blur(8px) drop-shadow(0 0 0 rgba(243,198,107,0))}
+  70%{opacity:1;transform:translateY(-3px) scale(1.015);filter:blur(0) drop-shadow(0 0 38px rgba(243,198,107,.24))}
+  100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0) drop-shadow(0 0 18px rgba(185,130,36,.16))}
+}
+body.premium-motion-ready .branch-modal-overlay.open .branch-card{
+  animation:dahabBranchStagger .55s cubic-bezier(.22,1,.36,1) both !important;
+}
+body.premium-motion-ready .branch-modal-overlay.open .branch-card:nth-child(2){animation-delay:.06s!important}
+body.premium-motion-ready .branch-modal-overlay.open .branch-card:nth-child(3){animation-delay:.12s!important}
+body.premium-motion-ready .branch-modal-overlay.open .branch-card:nth-child(4){animation-delay:.18s!important}
+@keyframes dahabBranchStagger{
+  from{opacity:0;transform:translateY(22px) scale(.94);filter:blur(7px)}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+}
+.gold-particles.motion-force{
+  z-index:0;
+  opacity:.95 !important;
+}
+.gold-particles.motion-force .gold-particle{
+  animation:dahabParticleFloat linear infinite !important;
+}
+body.premium-motion-ready .reveal-up,
+body.premium-motion-ready .reveal-section,
+body.premium-motion-ready .reveal-card,
+body.premium-motion-ready .reveal-logo{
+  transition:opacity .75s ease,transform .75s cubic-bezier(.22,1,.36,1),filter .75s ease !important;
+}
+body.premium-motion-ready .reveal-up:not(.visible),
+body.premium-motion-ready .reveal-section:not(.visible),
+body.premium-motion-ready .reveal-card:not(.visible),
+body.premium-motion-ready .reveal-logo:not(.visible){
+  filter:blur(10px);
+}
+
+
+/* Section visibility safety fix */
+.branch-availability-note{margin:14px 0 16px;padding:11px 14px;border-radius:12px;background:rgba(243,198,107,.10);border:1px solid rgba(243,198,107,.32);color:#f3d28a;font-size:.88rem;line-height:1.7;text-align:right;}
+body:not(.js-loaded) .reveal-up,
+body:not(.js-loaded) .reveal-section,
+body:not(.js-loaded) .reveal-card,
+body:not(.js-loaded) .reveal-logo{opacity:1!important;transform:none!important;filter:none!important;}
+
+/* Featured section visibility safety */
+#featured{display:block !important; visibility:visible !important;}
+#featuredGrid{display:grid !important; min-height:120px;}
+#featuredGrid .featured-card{opacity:1; transform:none;}
+
+
+
+/* =====================================================
+   DAHAB ANIMATION ONLY FINAL FIX
+   واضح بدون تغيير التصميم أو السكشنات
+   ===================================================== */
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;}
+
+/* طبقة لمعات ذهبية ظاهرة فوق الخلفية وتحت المحتوى */
+.dahab-motion-layer{
+  position:fixed;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  overflow:hidden;
+  opacity:.95;
+}
+.dahab-motion-dot{
+  position:absolute;
+  bottom:-40px;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:rgba(243,198,107,.85);
+  box-shadow:0 0 14px rgba(243,198,107,.8),0 0 30px rgba(185,130,36,.35);
+  animation:dahabDotUp linear infinite;
+}
+@keyframes dahabDotUp{
+  0%{transform:translate3d(0,0,0) scale(.55);opacity:0;}
+  14%{opacity:.95;}
+  75%{opacity:.55;}
+  100%{transform:translate3d(var(--x,20px),-110vh,0) scale(1.2);opacity:0;}
+}
+
+.site-header,.hero,.section,.site-footer,.modal-overlay,.branch-modal-overlay,.back-to-top{position:relative;z-index:5;}
+
+/* دخول السكشنات بشكل واضح */
+.reveal-up,.reveal-section,.reveal-card,.reveal-logo,
+.product-card,.featured-card,.custom-example-card,.contact-card{
+  transition:opacity .75s ease, transform .75s cubic-bezier(.22,1,.36,1), filter .75s ease, box-shadow .35s ease !important;
+}
+.product-card,.featured-card,.custom-example-card,.contact-card{
+  animation:dahabCardRise .85s cubic-bezier(.22,1,.36,1) both;
+}
+.product-card:nth-child(2n),.featured-card:nth-child(2n),.custom-example-card:nth-child(2n){animation-delay:.08s;}
+.product-card:nth-child(3n),.featured-card:nth-child(3n),.custom-example-card:nth-child(3n){animation-delay:.16s;}
+@keyframes dahabCardRise{
+  from{opacity:0;transform:translateY(34px) scale(.97);filter:blur(8px);}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+}
+
+/* لمعان على صور المنتجات */
+.product-image-wrap,.featured-card-image-wrap,.custom-example-image{position:relative;overflow:hidden;}
+.product-image-wrap::before,.featured-card-image-wrap::before,.custom-example-image::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-140%;
+  width:75%;
+  height:100%;
+  z-index:8;
+  pointer-events:none;
+  background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.05) 35%,rgba(255,224,156,.42) 50%,rgba(255,255,255,.07) 65%,transparent 100%);
+  transform:skewX(-22deg);
+  animation:dahabImageShine 3.2s ease-in-out infinite;
+}
+@keyframes dahabImageShine{
+  0%,42%{left:-140%;}
+  72%,100%{left:165%;}
+}
+
+/* Hover فخم للكروت */
+.product-card:hover,.featured-card:hover,.custom-example-card:hover,.contact-card:hover{
+  transform:translateY(-12px) scale(1.018) !important;
+  box-shadow:0 28px 85px rgba(0,0,0,.65),0 0 42px rgba(243,198,107,.25) !important;
+}
+.product-card:hover img,.featured-card:hover img,.custom-example-card:hover img{
+  transform:scale(1.08) translateY(-3px) !important;
+  filter:saturate(1.08) contrast(1.08) brightness(1.05);
+}
+
+/* Glow واضح للأزرار المهمة */
+.btn-gold,.product-btn-whatsapp,.modal-whatsapp,.custom-orders-btn.primary,.featured-card-btn{
+  animation:dahabButtonGlow 2.15s ease-in-out infinite !important;
+}
+@keyframes dahabButtonGlow{
+  0%,100%{box-shadow:0 0 12px rgba(185,130,36,.10),0 0 0 rgba(243,198,107,0);}
+  50%{box-shadow:0 0 24px rgba(243,198,107,.48),0 0 54px rgba(185,130,36,.32);}
+}
+
+/* حركة اللوجو */
+.hero-main-logo,.hero-logo-circle img{
+  animation:dahabLogoBreath 4s ease-in-out infinite !important;
+  transform-origin:center;
+}
+@keyframes dahabLogoBreath{
+  0%,100%{transform:translateY(0) scale(1);filter:drop-shadow(0 0 18px rgba(243,198,107,.28));}
+  50%{transform:translateY(-12px) scale(1.018);filter:drop-shadow(0 0 34px rgba(243,198,107,.48));}
+}
+
+/* خط ذهبي متحرك تحت العناوين */
+.section-title::after{
+  content:"";
+  display:block;
+  width:150px;
+  height:2px;
+  margin:14px auto 0;
+  border-radius:999px;
+  background:linear-gradient(90deg,transparent,#f3c66b,transparent);
+  animation:dahabTitleLine 1.9s ease-in-out infinite !important;
+}
+@keyframes dahabTitleLine{
+  0%,100%{opacity:.35;transform:scaleX(.55);}
+  50%{opacity:1;transform:scaleX(1.12);}
+}
+
+/* نافذة الفروع */
+.branch-modal-overlay.open .branch-modal,.modal-overlay.open .modal{
+  animation:dahabModalPop .55s cubic-bezier(.22,1,.36,1) both !important;
+}
+.branch-modal-overlay.open .branch-card{
+  animation:dahabBranchCard .48s cubic-bezier(.22,1,.36,1) both !important;
+}
+.branch-modal-overlay.open .branch-card:nth-child(2){animation-delay:.06s!important;}
+.branch-modal-overlay.open .branch-card:nth-child(3){animation-delay:.12s!important;}
+.branch-modal-overlay.open .branch-card:nth-child(4){animation-delay:.18s!important;}
+@keyframes dahabModalPop{
+  from{opacity:0;transform:translateY(28px) scale(.92);filter:blur(10px);}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+}
+@keyframes dahabBranchCard{
+  from{opacity:0;transform:translateY(18px) scale(.95);filter:blur(7px);}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+}
+
+@media(max-width:760px){
+  .dahab-motion-layer{opacity:.55;}
+  .product-card:hover,.featured-card:hover,.custom-example-card:hover,.contact-card:hover{transform:translateY(-6px) scale(1.01)!important;}
+}
+
+
+
+/* ===== Eid Al-Adha Safe Event Section ===== */
+.eid-section{
+  position:relative;
+  overflow:hidden;
+  padding:86px 0;
+  background:
+    radial-gradient(circle at 18% 22%,rgba(243,198,107,.18),transparent 32%),
+    radial-gradient(circle at 82% 35%,rgba(185,130,36,.14),transparent 30%),
+    linear-gradient(135deg,rgba(12,6,2,.96),rgba(42,19,6,.82));
+  border-top:1px solid rgba(243,198,107,.18);
+  border-bottom:1px solid rgba(243,198,107,.16);
+}
+.eid-section::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,235,170,.06),transparent);animation:eidSweep 5.8s ease-in-out infinite;pointer-events:none;}
+@keyframes eidSweep{0%{transform:translateX(120%)}55%,100%{transform:translateX(-120%)}}
+.eid-card{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;padding:34px;border-radius:28px;background:rgba(18,8,4,.72);border:1px solid rgba(243,198,107,.34);box-shadow:0 22px 70px rgba(0,0,0,.42),0 0 35px rgba(185,130,36,.14);}
+.eid-kicker{display:inline-flex;align-items:center;gap:8px;color:#f3c66b;font-weight:900;margin-bottom:10px;}
+.eid-title{font-family:'Tajawal',sans-serif;font-size:clamp(1.8rem,4vw,3.3rem);font-weight:900;line-height:1.18;color:transparent;background:linear-gradient(180deg,#fff0bd,#d09a35 82%);-webkit-background-clip:text;background-clip:text;margin-bottom:12px;}
+.eid-text{color:rgba(248,228,183,.76);font-size:1.02rem;max-width:620px;margin-bottom:22px;}
+.eid-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.eid-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:900;border:1px solid rgba(243,198,107,.38);transition:.35s ease;}
+.eid-btn.primary{background:linear-gradient(135deg,#8b5a20,#d4a044);color:#140702;box-shadow:0 0 26px rgba(185,130,36,.26);}
+.eid-btn.secondary{background:rgba(185,130,36,.12);color:#f3d28a;}
+.eid-btn:hover{transform:translateY(-3px);filter:brightness(1.08);}
+.eid-visual{position:relative;min-height:240px;display:flex;align-items:center;justify-content:center;}
+.eid-moon{width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 34% 30%,#fff1b9,#d49b35 72%);box-shadow:0 0 60px rgba(243,198,107,.38);animation:eidFloat 3.8s ease-in-out infinite;}
+.eid-moon::after{content:"";position:absolute;width:128px;height:128px;border-radius:50%;background:#160904;transform:translate(36px,-10px);}
+.eid-ring{position:absolute;width:230px;height:230px;border:1px solid rgba(243,198,107,.32);border-radius:50%;animation:eidRotate 13s linear infinite;}
+.eid-ring::before,.eid-ring::after{content:"✦";position:absolute;color:#f3c66b;text-shadow:0 0 16px rgba(243,198,107,.6);}
+.eid-ring::before{top:18px;right:26px}.eid-ring::after{bottom:18px;left:32px}
+@keyframes eidFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+@keyframes eidRotate{to{transform:rotate(360deg)}}
+.eid-audio-widget{position:fixed;right:22px;bottom:24px;z-index:1200;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:999px;background:rgba(15,7,3,.84);border:1px solid rgba(243,198,107,.38);backdrop-filter:blur(10px);box-shadow:0 12px 38px rgba(0,0,0,.45),0 0 24px rgba(185,130,36,.15);animation:eidAudioPop .7s ease both;}
+@keyframes eidAudioPop{from{opacity:0;transform:translateY(16px) scale(.92)}to{opacity:1;transform:translateY(0) scale(1)}}
+.eid-audio-btn{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#8b5a20,#d4a044);color:#120804;border:1px solid rgba(255,230,160,.38);}
+.eid-audio-btn.playing{animation:eidPulse 1.5s ease-in-out infinite;}
+@keyframes eidPulse{0%,100%{box-shadow:0 0 10px rgba(185,130,36,.24)}50%{box-shadow:0 0 30px rgba(243,198,107,.55)}}
+.eid-audio-text{font-size:.8rem;font-weight:900;color:#f3d28a;line-height:1.2}.eid-audio-text span{display:block;font-weight:600;color:rgba(248,228,183,.55);font-size:.7rem;}
+@media(max-width:760px){.eid-card{grid-template-columns:1fr;text-align:center;padding:26px 18px}.eid-actions{justify-content:center}.eid-visual{min-height:200px}.eid-moon{width:145px;height:145px}.eid-ring{width:205px;height:205px}.eid-audio-widget{right:14px;bottom:74px}.eid-audio-text{display:none}}
+
+
+
+/* === FINAL ROOT/PATH + SECTION VISIBILITY FIX === */
+section, .section, .featured-section, .menu-section, .custom-orders-cta, .custom-examples, .eid-section{
+  display:block !important;
+  visibility:visible !important;
+}
+#featuredGrid, #productsGrid, .custom-examples-grid{
+  display:grid !important;
+}
+.product-card, .featured-card, .custom-example-card, .reveal-section, .reveal-up, .reveal-card{
+  visibility:visible !important;
+}
+.eid-section{margin-top:0;}
 
 </style>
 </head>
@@ -584,6 +1413,7 @@ body::before{
       <a href="#hero">الرئيسية</a>
       <a href="#featured">الأكثر طلباً</a>
       <a href="#menu">المنيو</a>
+      <a href="#customOrders">طلبات خاصة</a>
       
     </nav>
 
@@ -604,6 +1434,7 @@ body::before{
   <a href="#hero" class="mobile-nav-link">الرئيسية</a>
   <a href="#featured" class="mobile-nav-link">الأكثر طلباً</a>
   <a href="#menu" class="mobile-nav-link">المنيو</a>
+  <a href="#customOrders" class="mobile-nav-link">طلبات خاصة</a>
  
 </nav>
 
@@ -625,7 +1456,7 @@ body::before{
     </div>
     <div class="hero-buttons reveal-up delay-3">
       <a href="#menu" class="btn btn-gold"><i class="fa fa-utensils"></i> عرض المنيو</a>
-     
+      <a href="#customOrders" class="btn btn-outline"><i class="fa fa-wand-magic-sparkles"></i> طلب خاص</a>
       <a href="https://wa.me/972569896990" class="btn btn-outline" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
     </div>
   </div>
@@ -633,12 +1464,39 @@ body::before{
 </section>
 
 
+
+
+<section class="eid-section section" id="eidAdha">
+  <div class="container">
+    <div class="eid-card reveal-section">
+      <div class="eid-content">
+        <span class="eid-kicker"><i class="fa fa-star-and-crescent"></i> فعالية عيد الأضحى</span>
+        <h2 class="eid-title">دهب يبارك لكم عيد الأضحى المبارك</h2>
+        <p class="eid-text">كل عام وأنتم بخير، ضيافتكم في العيد علينا ألذّ وأرتب. جهّز مناسبتك، اختار من المنيو، أو اطلب كيك خاص بتصميم يناسب فرحتك.</p>
+        <div class="eid-actions">
+          <a href="#menu" class="eid-btn primary"><i class="fa fa-gift"></i> شوف ضيافة العيد</a>
+          <a href="#customOrders" class="eid-btn secondary"><i class="fa fa-cake-candles"></i> اطلب كيك عيد خاص</a>
+        </div>
+      </div>
+      <div class="eid-visual" aria-hidden="true">
+        <div class="eid-ring"></div>
+        <div class="eid-moon"></div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="featured-section section" id="featured">
   <div class="container">
     <div class="section-heading reveal-section">
       <span class="section-tag">الأكثر طلباً</span>
       <h2 class="section-title">المنتجات المميزة</h2>
-      
+      <div class="section-divider">
+        <span class="divider-line"></span>
+        <span class="divider-diamond">حلويــــات دهــــب</span>
+        <span class="divider-line"></span>
+      </div>
+    </div>
+
     <div class="featured-grid" id="featuredGrid"></div>
   </div>
 </section>
@@ -668,16 +1526,26 @@ body::before{
       <button class="filter-btn" data-category="aidPackages">بكجات العيد</button>
       <!-- <button class="filter-btn" data-category="westernSweets">حلويات غربية</button> -->
       <!-- <button class="filter-btn" data-category="cold">مشروبات باردة</button> -->
-        <!-- <button class="filter-btn" data-category="hot">مشروبات ساخنة</button> -->
+        <button class="filter-btn" data-category="hot">مشروبات ساخنة</button>
        <button class="filter-btn" data-category="waffle">وافل</button>
       <button class="filter-btn" data-category="crepe">كريب</button> 
-      <button class="filter-btn" data-category="miniCake">ميني كيك</button> 
+      <button class="filter-btn" data-category="miniCake"> قطع كيك دهــب</button> 
+        <button class="filter-btn" data-category="miniPanCake"> ميني بان كيك </button> 
       <button class="filter-btn" data-category="icecream">آيس كريم</button>
-      <button class="filter-btn" data-category="cake">كيك</button>
+      <button class="filter-btn" data-category="cake">كيك فيروروشيه</button>
         <button class="filter-btn" data-category="cheaseCake">تشيز كيك</button>
       
     
     </div>  
+
+    <div class="special-jump-cta reveal-section">
+      <div class="special-jump-text">
+        <strong>عندك طلب خاص أو مناسبة؟</strong>
+        <span>انتقل لقسم الطلبات الخاصة واكتب لنا التصميم، النكهة، الحجم، وعدد الأشخاص.</span>
+      </div>
+      <a href="#customOrders" class="special-jump-btn"><i class="fa fa-arrow-down"></i> روح لقسم الطلب الخاص</a>
+    </div>
+
     <div class="products-grid" id="productsGrid"></div>
     <div class="empty-state" id="emptyState" style="display:none">
       <div class="empty-icon">🔍</div>
@@ -688,6 +1556,95 @@ body::before{
 </section>
 
 
+
+
+<section class="custom-orders-cta" id="customOrders">
+  <div class="container">
+    <div class="custom-orders-card reveal-section">
+      <div class="custom-orders-content">
+        <span class="custom-orders-kicker">طلبات خاصة ومناسبات</span>
+        <h2 class="custom-orders-title">بدك كيكة باسمك أو تصميم خاص؟</h2>
+        <p class="custom-orders-text">احكِ لنا الفكرة، الحجم، النكهة، وعدد الأشخاص — وبنجهز لك طلب مرتب يناسب حفلات الميلاد، الخطوبة، التخرج، والضيافة.</p>
+      </div>
+      <div class="custom-orders-actions">
+        <a class="custom-orders-btn primary js-special-whatsapp" href="#branches">
+          <i class="fab fa-whatsapp"></i> اطلب تصميم خاص
+        </a>
+        <a class="custom-orders-btn secondary" href="#menu"><i class="fa fa-utensils"></i> شاهد المنيو</a>
+      </div>
+    </div>
+
+    <div class="custom-examples reveal-section">
+      <div class="custom-examples-head">
+        <h3>أمثلة للكيك الخاص</h3>
+        <p>اختار الفكرة القريبة من مناسبتك، وبعدها ابعتلنا الاسم، اللون، النكهة، الحجم، وعدد القطع.</p>
+      </div>
+
+      <div class="custom-examples-grid">
+        <article class="custom-example-card">
+          <div class="custom-example-img">
+            <span class="custom-example-tag">ميلاد</span>
+            <img src="images/products/cake/cake-choclate.png" alt="كيكة عيد ميلاد خاصة" />
+          </div>
+          <div class="custom-example-body">
+            <h4>كيكة عيد ميلاد</h4>
+            <p>تصميم باسم صاحب المناسبة مع ألوان، عمر، رسالة قصيرة، وإضافة ديكور حسب الثيم المطلوب.</p>
+            <div class="custom-example-details">
+              <span>اسم + عمر</span><span>ألوان مخصصة</span><span>حجم حسب القطع</span>
+            </div>
+            <a class="custom-example-order js-example-whatsapp" href="#" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> اطلب نفس الفكرة</a>
+          </div>
+        </article>
+
+        <article class="custom-example-card">
+          <div class="custom-example-img">
+            <span class="custom-example-tag">خطوبة</span>
+            <img src="images/products/cake/cake-rafilo.png" alt="كيكة خطوبة أو مناسبة" />
+          </div>
+          <div class="custom-example-body">
+            <h4>كيكة خطوبة ومناسبات</h4>
+            <p>ستايل راقٍ بألوان هادئة، ورد أو لمسات ذهبية، مناسب للتصوير والضيافة.</p>
+            <div class="custom-example-details">
+              <span>ذهبي / أبيض</span><span>ورد</span><span>كتابة خاصة</span>
+            </div>
+            <a class="custom-example-order js-example-whatsapp" href="#" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> اطلب نفس الفكرة</a>
+          </div>
+        </article>
+
+        <article class="custom-example-card">
+          <div class="custom-example-img">
+            <span class="custom-example-tag">تخرج</span>
+            <img src="images/products/cake/cake-lutes.png" alt="كيكة تخرج خاصة" />
+          </div>
+          <div class="custom-example-body">
+            <h4>كيكة تخرج</h4>
+            <p>تصميم باسم الخريج، سنة التخرج، التخصص، وألوان الجامعة أو المدرسة.</p>
+            <div class="custom-example-details">
+              <span>اسم الخريج</span><span>سنة التخرج</span><span>ثيم الجامعة</span>
+            </div>
+            <a class="custom-example-order js-example-whatsapp" href="#" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> اطلب نفس الفكرة</a>
+          </div>
+        </article>
+
+        <article class="custom-example-card">
+          <div class="custom-example-img">
+            <span class="custom-example-tag">بلاطات</span>
+            <img src="images/products/cake/cake-kinder.png" alt="كيك بلاطات للمناسبات" />
+          </div>
+          <div class="custom-example-body">
+            <h4>كيك نظام بلاطات</h4>
+            <p>مناسب للعزايم والضيافة، مقسّم قطع جاهزة للتقديم مع اختيار النكهة والحجم.</p>
+            <div class="custom-example-details">
+              <span>30×30</span><span>23 قطعة</span><span>200 ₪</span>
+            </div>
+            <a class="custom-example-order js-example-whatsapp" href="#" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> اطلب نفس الفكرة</a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="container">
@@ -701,6 +1658,7 @@ body::before{
         <a href="#hero">الرئيسية</a>
         <a href="#featured">الأكثر طلبا</a>
         <a href="#menu">المنيو</a>
+        <a href="#customOrders">طلبات خاصة</a>
         
 
       </div>
@@ -723,6 +1681,21 @@ body::before{
 </footer>
 
 
+
+<div class="branch-modal-overlay" id="branchModalOverlay">
+  <div class="branch-modal" role="dialog" aria-modal="true" aria-labelledby="branchModalTitle">
+    <button class="branch-modal-close" id="branchModalClose" aria-label="إغلاق"><i class="fa fa-times"></i></button>
+    <div class="branch-modal-head">
+      <span class="branch-modal-kicker"><i class="fab fa-whatsapp"></i> إرسال الطلب للفرع المناسب</span>
+      <h3 class="branch-modal-title" id="branchModalTitle">اختار الفرع الأقرب إليك</h3>
+      <p class="branch-modal-text">بعد اختيار الفرع، سيتم فتح واتساب ومعه بيانات الطلب كاملة بشكل مرتب.</p>
+    </div>
+    <div class="branch-availability-note" id="branchAvailabilityNote" style="display:none"></div>
+    <div class="branch-list" id="branchList"></div>
+    <div class="branch-hint">ملاحظة: عدّل أرقام الفروع من متغير BRANCHES داخل الكود عند استلام الأرقام النهائية.</div>
+  </div>
+</div>
+
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal" id="productModal" role="dialog" aria-modal="true">
     <button class="modal-close" id="modalClose" aria-label="إغلاق"><i class="fa fa-times"></i></button>
@@ -741,12 +1714,81 @@ body::before{
   </div>
 </div>
 
+
+<audio id="eidAudio" src="images/audio/eid.mp3" preload="none" loop></audio>
+<div class="eid-audio-widget" id="eidAudioWidget">
+  <button class="eid-audio-btn" id="eidAudioBtn" type="button" aria-label="تشغيل موسيقى العيد"><i class="fa fa-music"></i></button>
+  <div class="eid-audio-text" id="eidAudioStatus">موسيقى العيد<span>اضغط للتشغيل</span></div>
+</div>
+
 <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى"><i class="fa fa-chevron-up"></i></button>
 
 <script>
 
+document.body.classList.add("js-loaded");
 
 const WHATSAPP_NUMBER = "972569896990";
+
+// عدّل أرقام الفروع هنا بصيغة دولية بدون + أو 00
+const BRANCHES = [
+  { id: "nuseirat", name: "فرع النصيرات", area: "النصيرات", phone: "972569896990" },
+  { id: "deir_al_balah", name: "فرع دير البلح", area: "دير البلح", phone: "972569896990" },
+  { id: "gaza_al_nasr", name: "فرع غزة النصر", area: "غزة - النصر", phone: "972569896990" },
+  { id: "branch_4", name: "الفرع الرابع", area: "ضع اسم الفرع هنا", phone: "972569896990" }
+];
+
+let pendingWhatsappMessage = "";
+let pendingProduct = null;
+
+const WESTERN_CATEGORIES = ["milkshake","waffle","crepe","miniCake","miniPanCake","icecream","cake","cheaseCake"];
+const WESTERN_BRANCHES = ["nuseirat","deir_al_balah"];
+
+function isWesternProduct(product){
+  return !!product && WESTERN_CATEGORIES.includes(product.category);
+}
+function branchCanServeProduct(branch, product){
+  if(!isWesternProduct(product)) return true;
+  return WESTERN_BRANCHES.includes(branch.id);
+}
+function availabilityBadgeHTML(product){
+  if(!isWesternProduct(product)) return "";
+  return `<div class="availability-badge"><i class="fa fa-store"></i> متوفر في النصيرات ودير البلح فقط</div>`;
+}
+function whatsappUrl(phone, message){
+  return "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+}
+function renderBranches(product){
+  const list = document.getElementById("branchList");
+  if(!list) return;
+  const note = document.getElementById("branchAvailabilityNote");
+  if(note){
+    note.style.display = isWesternProduct(product) ? "block" : "none";
+    note.innerHTML = `<i class="fa fa-circle-info"></i> هذا المنتج متوفر حالياً في فرع النصيرات وفرع دير البلح فقط. باقي الفروع قريباً.`;
+  }
+  list.innerHTML = BRANCHES.map((b,i)=>{
+    const allowed = branchCanServeProduct(b, product);
+    return `
+    <button type="button" class="branch-card${allowed ? "" : " branch-disabled"}" data-branch-index="${i}" data-disabled="${allowed ? "0" : "1"}" style="transition-delay:${i*45}ms">
+      <strong>${b.name}</strong>
+      <span>${b.area}</span>
+      ${allowed
+        ? `<em><i class="fab fa-whatsapp"></i> إرسال لهذا الفرع</em>`
+        : `<span class="branch-soon"><i class="fa fa-lock"></i> قريباً لهذا النوع</span>`}
+    </button>`;
+  }).join("");
+}
+function openBranchPicker(message, product=null){
+  pendingWhatsappMessage = message || "السلام عليكم، بدي أطلب من عندكم";
+  pendingProduct = product || null;
+  renderBranches(pendingProduct);
+  document.getElementById("branchModalOverlay")?.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeBranchPicker(){
+  document.getElementById("branchModalOverlay")?.classList.remove("open");
+  pendingProduct = null;
+  if(!document.getElementById("modalOverlay")?.classList.contains("open")) document.body.style.overflow = "";
+}
 
 const heroBackgrounds = [
   "images/hero-bg.png",
@@ -781,8 +1823,9 @@ const categoryLabels = {
   eastenSweets: "حلويات شرقية", hot:"مشروبات ساخنة", 
   cold:"مشروبات باردة", offers:"عروض خاصة",
   aidPackages:"بكجات العيد" ,cheaseCake:"تشيز كيك",
-  miniCake:"ميني كيك"
+  picesedahab:"قطع كيك دهـــب",miniPanCake:"ميني بان كيك",
 };
+
 
 
 const products = [
@@ -820,6 +1863,26 @@ const products = [
     emoji: "🍯"
   },
   {
+    id: 3,
+    name: "ميلك شيك أوريو",
+    category: "milkshake",
+    price: "25 ₪",
+    image: "images/products/milk-shake/milk-shake-caramel.png",
+    description: "ميلك شيك كراميل بطعم غني ومتوازن مع قوام كريمي ناعم.",
+    featured: false,
+    emoji: "🍯"
+  },
+   {
+    id: 3,
+    name: "ميلك شيك سنيكرز",
+    category: "milkshake",
+    price: "25 ₪",
+    image: "images/products/milk-shake/milk-shake-caramel.png",
+    description: "ميلك شيك كراميل بطعم غني ومتوازن مع قوام كريمي ناعم.",
+    featured: false,
+    emoji: "🍯"
+  },
+  {
     id: 4,
     name: "ميلك شيك بستاشيو",
     category: "milkshake",
@@ -828,6 +1891,17 @@ const products = [
     description: "ميلك شيك بستاشيو فاخر بنكهة فستق غنية وقوام كريمي مميز.",
     featured: true,
     emoji: "🥜"
+  },
+
+  {
+    id: 3,
+    name: "ميلك شيك لوتس",
+    category: "milkshake",
+    price: "25 ₪",
+    image: "images/products/milk-shake/milk-shake-caramel.png",
+    description: "ميلك شيك كراميل بطعم غني ومتوازن مع قوام كريمي ناعم.",
+    featured: false,
+    emoji: "🍯"
   },
 
   // =========================
@@ -853,6 +1927,27 @@ const products = [
     featured: false,
     emoji: "🧇"
   },
+   {
+    id: 6,
+    name: "وافل بستاشيو",
+    category: "waffle",
+    price: "35 ₪",
+    image: "images/products/wafel/wafle-nutlle.png",
+    description: "وافل ساخن بطبقة نوتيلا غنية، مناسب لمحبي الطعم الكلاسيكي.",
+    featured: false,
+    emoji: "🧇"
+  },
+    {
+    id: 6,
+    name: "وافل كيندر",
+    category: "waffle",
+    price: "35 ₪",
+    image: "",
+    description: "وافل ساخن بطبقة نوتيلا غنية، مناسب لمحبي الطعم الكلاسيكي.",
+    featured: false,
+    emoji: "🧇"
+  },
+
   {
     id: 7,
     name: "وافل مكس",
@@ -899,6 +1994,16 @@ const products = [
   },
   {
     id: 11,
+    name: "كريب كيندر",
+    category: "crepe",
+    price: "35 ₪",
+    image: "images/products/crepe/crepe-mix.png",
+    description: "كريب مكس يجمع أكثر من نكهة وصوص في قطعة واحدة بطعم متوازن وفاخر.",
+    featured: true,
+    emoji: "🥞"
+  },
+  {
+    id: 11,
     name: "كريب مكس",
     category: "crepe",
     price: "35 ₪",
@@ -913,7 +2018,7 @@ const products = [
   // =========================
   {
     id: 12,
-    name: "ميني بيبي كيك داينميت",
+    name: "ميني بيبي  داينميت",
     category: "miniCake",
     price: "30 ₪",
     image: "images/products/mini-cake/mini-baby-dienamt.png",
@@ -967,7 +2072,7 @@ const products = [
   // =========================
   {
     id: 17,
-    name: "كيك الشوكولاتة الفاخر",
+    name: "كيك الشوكولاتة ",
     category: "cake",
     price: "25 ₪",
     image: "images/products/cake/cake-choclate.png",
@@ -977,7 +2082,7 @@ const products = [
   },
   {
     id: 18,
-    name: "كيك اللوتس الفاخر",
+    name: "كيك اللوتس ",
     category: "cake",
     price: "30 ₪",
     image: "images/products/cake/cake-lutes.png",
@@ -987,7 +2092,7 @@ const products = [
   },
   {
     id: 19,
-    name: "كيك البستاشيو الفاخر",
+    name: "كيك البستاشيو ",
     category: "cake",
     price: "30 ₪",
     image: "images/products/cake/cake-pistachio.png",
@@ -997,7 +2102,7 @@ const products = [
   },
   {
     id: 20,
-    name: "كيك الكيندر الفاخر",
+    name: "كيك الكيندر ",
     category: "cake",
     price: "30 ₪",
     image: "images/products/cake/cake-kinder.png",
@@ -1007,7 +2112,7 @@ const products = [
   },
   {
     id: 21,
-    name: "كيك الرافايلو الفاخر",
+    name: "كيك الرافايلو ",
     category: "cake",
     price: "25 ₪",
     image: "images/products/cake/cake-rafilo.png",
@@ -1078,7 +2183,7 @@ const products = [
     name: "إسبريسو صغير",
     category: "hot",
     price: "7 ₪",
-    image: "images/coffee.big.png",
+    image: "images/coffee-big.png",
     description: "إسبريسو إيطالي مركز بطعم قوي ورائحة قهوة غنية.",
     featured: false,
     emoji: "☕"
@@ -1088,7 +2193,7 @@ const products = [
     name: "إسبريسو كبير",
     category: "hot",
     price: "12 ₪",
-    image: "images/coffee.big.png",
+    image: "images/coffee-big.png",
     description: "دبل إسبريسو إيطالي لمحبي القهوة المركزة بطعم أقوى.",
     featured: false,
     emoji: "☕"
@@ -1285,6 +2390,21 @@ const products = [
     description: "بسبوسة بالقشطة طرية ومحلاة بالشيرة بطعم غني.",
     featured: false,
     emoji: "🍰"
+  },
+  {
+    id: 49,
+    name: "كيك نظام بلاطات",
+    category: "cake",
+    price: "120 ₪",
+    image: "images/products/cake/cake-choclate.png",
+    description: "كيكة بلاطات مرتبة للمناسبات والضيافة، مقسّمة قطع جاهزة للتقديم.",
+    featured: true,
+    emoji: "🎂",
+    sizes: [
+      { label: "صغير", dimensions: "20×20", pieces: "12 قطعة", price: "120 ₪" },
+      { label: "وسط", dimensions: "25×25", pieces: "18 قطعة", price: "160 ₪" },
+      { label: "كبير", dimensions: "30×30", pieces: "23 قطعة", price: "200 ₪" }
+    ]
   }
 ];
 
@@ -1292,14 +2412,81 @@ const products = [
 // This fixes repeated product ids and makes Details open the correct item.
 products.forEach((product, index) => {
   product.uid = index + 1;
+
+  // Cakes have three sizes. Edit these prices anytime from here.
+  if(product.category === "cake" && !product.sizes){
+    product.sizes = [
+      { label: "صغير", dimensions: "20×20", pieces: "12 قطعة", price: product.price },
+      { label: "وسط",  dimensions: "25×25", pieces: "18 قطعة", price: "45 ₪" },
+      { label: "كبير", dimensions: "30×30", pieces: "23 قطعة", price: "65 ₪" }
+    ];
+  }
 });
 
 let currentCategory = "all";
 let currentSearch   = "";
 
+function getBasePrice(product){
+  return product.sizes && product.sizes.length ? product.sizes[0].price : product.price;
+}
+
+function priceHTML(product){
+  if(product.sizes && product.sizes.length){
+    return `<span class="price-from-label">ابتداءً من <strong>${getBasePrice(product)}</strong></span>`;
+  }
+  return product.price;
+}
+
+function sizesHTML(product, cls){
+  if(!product.sizes || !product.sizes.length) return "";
+  return `<div class="${cls}">${product.sizes.map(s => `
+    <span class="${cls.replace("options","pill")}">
+      ${s.label}${s.dimensions ? ` <small>${s.dimensions}</small>` : ""}
+      ${s.pieces ? `<small>${s.pieces}</small>` : ""}
+      <span>${s.price}</span>
+    </span>
+  `).join("")}</div>`;
+}
+
+function getImageUrl(imagePath){
+  if(!imagePath) return "";
+  if(/^https?:\/\//i.test(imagePath)) return imagePath;
+
+  // عند رفع الموقع أونلاين، هذا يحول مسار الصورة إلى رابط كامل يظهر داخل رسالة واتساب.
+  // ملاحظة: واتساب لا يرفق الصورة تلقائياً، لكنه يرسل رابطها مع بيانات المنتج.
+  return new URL(imagePath, window.location.href).href;
+}
+
+function buildProductMessage(product){
+  const categoryText = categoryLabels[product.category] || product.category || "";
+  const imageUrl = getImageUrl(product.image);
+
+  const sizeText = product.sizes && product.sizes.length
+    ? "الأحجام المتوفرة:" + product.sizes.map(s => {
+        const parts = [s.label, s.dimensions, s.pieces, s.price].filter(Boolean);
+        return `\n• ${parts.join(" - ")}`;
+      }).join("")
+    : `السعر: ${product.price || "حسب الطلب"}`;
+
+  return [
+    "السلام عليكم، يعطيكم العافية",
+    "حبيت أطلب من عندكم:",
+    "",
+    `المنتج: ${product.name}`,
+    categoryText ? `القسم: ${categoryText}` : "",
+    sizeText,
+    product.description ? `ملاحظة عن المنتج: ${product.description}` : "",
+    imageUrl ? `صورة المنتج: ${imageUrl}` : "",
+    "",
+    "الاسم:",
+    "العنوان:",
+    "وقت الاستلام المناسب:",
+    "ملاحظات:"
+  ].filter(Boolean).join("\n");
+}
+
 function wa(product){
-  const msg = encodeURIComponent("مرحبا Dahab Sweets، أريد طلب: " + product.name);
-  return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg;
+  return "#branches";
 }
 
 function imgTag(p, cls){
@@ -1324,8 +2511,10 @@ function renderFeatured(){
       <div class="featured-card-body">
         <h3 class="featured-card-name">${p.name}</h3>
         <p class="featured-card-description">${p.description}</p>
+        ${availabilityBadgeHTML(p)}
+        ${sizesHTML(p,"featured-size-options")}
         <div class="featured-card-footer">
-          <span class="featured-card-price">${p.price}</span>
+          <span class="featured-card-price">${priceHTML(p)}</span>
           <button type="button" class="featured-card-btn js-open-product" data-product-id="${p.uid}">التفاصيل</button>
         </div>
       </div>
@@ -1366,13 +2555,15 @@ function renderProducts(list, animate){
       <div class="product-body">
         <h3 class="product-name">${p.name}</h3>
         <p class="product-description">${p.description}</p>
+        ${availabilityBadgeHTML(p)}
+        ${sizesHTML(p,"product-size-options")}
         <div class="product-footer">
-          <span class="product-price">${p.price}</span>
+          <span class="product-price">${priceHTML(p)}</span>
           <div class="product-actions">
             <button type="button" class="product-btn-details js-open-product" data-product-id="${p.uid}">
               <i class="fa fa-info-circle"></i> التفاصيل
             </button>
-            <a class="product-btn-whatsapp" href="${wa(p)}" target="_blank" rel="noopener" aria-label="اطلب عبر واتساب">
+            <a class="product-btn-whatsapp js-product-whatsapp" href="#branches" data-product-id="${p.uid}" aria-label="اطلب عبر واتساب">
               <i class="fab fa-whatsapp"></i> اطلب
             </a>
           </div>
@@ -1457,14 +2648,78 @@ function openModal(id){
 
   modalCategory.textContent = categoryLabels[p.category] || p.category;
   modalName.textContent = p.name;
-  modalDescription.textContent = p.description;
-  modalPrice.textContent = p.price;
-  modalWhatsapp.href = wa(p);
+  modalDescription.innerHTML = p.description + availabilityBadgeHTML(p) + sizesHTML(p,"modal-size-options");
+  modalPrice.innerHTML = priceHTML(p);
+  modalWhatsapp.href = "#branches";
+  modalWhatsapp.dataset.productId = p.uid;
+  modalWhatsapp.innerHTML = `<i class="fab fa-whatsapp"></i> إرسال بيانات المنتج للواتساب`;
 
   overlay.classList.add("open");
   document.body.style.overflow = "hidden";
 }
 window.openModal = openModal;
+
+
+function buildSpecialOrderMessage(){
+  return [
+    "السلام عليكم، يعطيكم العافية",
+    "بدي أعمل طلب خاص لمناسبة.",
+    "",
+    "نوع المناسبة:",
+    "التصميم أو الفكرة:",
+    "النكهة المطلوبة:",
+    "الحجم / عدد القطع:",
+    "الاسم على الكيك:",
+    "موعد الاستلام:",
+    "العنوان:",
+    "ملاحظات:"
+  ].join("\n");
+}
+
+function openProductBranchPicker(productId){
+  const p = products.find(x => Number(x.uid) === Number(productId));
+  if(!p) return;
+  openBranchPicker(buildProductMessage(p), p);
+}
+
+document.addEventListener("click", function(e){
+  const branchCard = e.target.closest(".branch-card");
+  if(branchCard){
+    e.preventDefault();
+    if(branchCard.dataset.disabled === "1") return;
+    const b = BRANCHES[Number(branchCard.dataset.branchIndex)];
+    if(b) window.open(whatsappUrl(b.phone, pendingWhatsappMessage), "_blank");
+    closeBranchPicker();
+    return;
+  }
+
+  const branchClose = e.target.closest("#branchModalClose");
+  if(branchClose){ e.preventDefault(); closeBranchPicker(); return; }
+
+  const branchOverlay = document.getElementById("branchModalOverlay");
+  if(e.target === branchOverlay){ closeBranchPicker(); return; }
+
+  const productWhatsapp = e.target.closest(".js-product-whatsapp, #modalWhatsapp");
+  if(productWhatsapp){
+    e.preventDefault();
+    openProductBranchPicker(productWhatsapp.dataset.productId);
+    return;
+  }
+
+  const exampleWhatsapp = e.target.closest(".js-example-whatsapp");
+  if(exampleWhatsapp){
+    e.preventDefault();
+    openBranchPicker(exampleWhatsapp.dataset.message || buildSpecialOrderMessage());
+    return;
+  }
+
+  const specialWhatsapp = e.target.closest(".js-special-whatsapp");
+  if(specialWhatsapp){
+    e.preventDefault();
+    openBranchPicker(buildSpecialOrderMessage());
+    return;
+  }
+});
 
 // Robust click handling for product cards and Details buttons.
 document.addEventListener("click", function(e){
@@ -1488,7 +2743,7 @@ function closeModal(){
 }
 document.getElementById("modalClose")?.addEventListener("click",closeModal);
 document.getElementById("modalOverlay")?.addEventListener("click",e=>{ if(e.target===document.getElementById("modalOverlay")) closeModal(); });
-document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeModal(); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ closeModal(); closeBranchPicker(); } });
 
 
 document.getElementById("categoryFilters").addEventListener("click",e=>{
@@ -1550,9 +2805,407 @@ function observeReveal(){
 }
 
 
+
+/* ===== Dahab Premium Animation JS ===== */
+function initDahabParticles(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(document.querySelector('.gold-particles')) return;
+
+  const layer = document.createElement('div');
+  layer.className = 'gold-particles';
+  layer.setAttribute('aria-hidden','true');
+  document.body.prepend(layer);
+
+  const count = Math.min(34, Math.max(18, Math.floor(window.innerWidth / 42)));
+  for(let i=0;i<count;i++){
+    const p = document.createElement('span');
+    p.className = 'gold-particle';
+    const size = (Math.random()*3 + 2).toFixed(1);
+    p.style.width = `${size}px`;
+    p.style.height = `${size}px`;
+    p.style.left = `${Math.random()*100}%`;
+    p.style.opacity = `${Math.random()*0.55 + 0.22}`;
+    p.style.animationDuration = `${Math.random()*9 + 9}s`;
+    p.style.animationDelay = `${Math.random()*9}s`;
+    p.style.setProperty('--drift', `${(Math.random()*80 - 40).toFixed(0)}px`);
+    layer.appendChild(p);
+  }
+}
+
+function initPremiumTilt(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const selector = '.product-card, .featured-card, .custom-example-card';
+
+  document.addEventListener('mousemove', (e)=>{
+    const card = e.target.closest(selector);
+    if(!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const px = x / rect.width;
+    const py = y / rect.height;
+    const rotateY = (px - .5) * 7;
+    const rotateX = (.5 - py) * 7;
+    card.style.setProperty('--mx', `${px*100}%`);
+    card.style.setProperty('--my', `${py*100}%`);
+    card.style.transform = `translateY(-8px) perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+  });
+
+  document.addEventListener('mouseleave', (e)=>{
+    const card = e.target.closest?.(selector);
+    if(card) card.style.transform = '';
+  }, true);
+
+  document.addEventListener('mouseout', (e)=>{
+    const card = e.target.closest?.(selector);
+    if(card && !card.contains(e.relatedTarget)) card.style.transform = '';
+  });
+}
+
+function initMagneticButtons(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const selector = '.btn, .custom-orders-btn, .product-btn-details, .product-btn-whatsapp, .featured-card-btn, .modal-whatsapp';
+  document.addEventListener('mousemove', (e)=>{
+    const btn = e.target.closest(selector);
+    if(!btn) return;
+    const r = btn.getBoundingClientRect();
+    const x = (e.clientX - (r.left + r.width/2)) * .10;
+    const y = (e.clientY - (r.top + r.height/2)) * .10;
+    btn.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+  });
+  document.addEventListener('mouseout', (e)=>{
+    const btn = e.target.closest?.(selector);
+    if(btn && !btn.contains(e.relatedTarget)) btn.style.transform = '';
+  });
+}
+
+initDahabParticles();
+initPremiumTilt();
+initMagneticButtons();
+
 renderFeatured();
+
+window.addEventListener("load", () => {
+  const featuredGrid = document.getElementById("featuredGrid");
+  if(featuredGrid && !featuredGrid.children.length){
+    renderFeatured();
+  }
+});
+
+function setupCustomExampleWhatsapp(){
+  document.querySelectorAll(".custom-example-card").forEach(card => {
+    const link = card.querySelector(".js-example-whatsapp");
+    if(!link) return;
+
+    const title = card.querySelector("h4")?.textContent.trim() || "طلب خاص";
+    const tag = card.querySelector(".custom-example-tag")?.textContent.trim() || "";
+    const desc = card.querySelector("p")?.textContent.trim() || "";
+    const details = Array.from(card.querySelectorAll(".custom-example-details span")).map(x => x.textContent.trim()).join("، ");
+    const img = card.querySelector("img")?.getAttribute("src") || "";
+    const imgUrl = getImageUrl(img);
+
+    const message = [
+      "السلام عليكم، يعطيكم العافية",
+      "حبيت أعمل طلب خاص مشابه لهذا المثال:",
+      "",
+      `نوع الكيك: ${title}`,
+      tag ? `المناسبة: ${tag}` : "",
+      details ? `التفاصيل: ${details}` : "",
+      desc ? `الفكرة: ${desc}` : "",
+      imgUrl ? `صورة المثال: ${imgUrl}` : "",
+      "",
+      "الاسم:",
+      "العنوان:",
+      "المقاس المطلوب:",
+      "النكهة المفضلة:",
+      "موعد الاستلام:",
+      "ملاحظات إضافية:"
+    ].filter(Boolean).join("\n");
+
+    link.href = "#branches";
+    link.dataset.message = message;
+  });
+}
+
+setupCustomExampleWhatsapp();
+
+
 renderProducts(filtered(),false);
 observeReveal();
+</script>
+
+
+<script>
+/* Dahab animation visibility fix */
+(function(){
+  document.body.classList.add('premium-motion-ready');
+
+  function forceGoldParticles(){
+    let layer = document.querySelector('.gold-particles');
+    if(!layer){
+      layer = document.createElement('div');
+      layer.className = 'gold-particles motion-force';
+      layer.setAttribute('aria-hidden','true');
+      document.body.prepend(layer);
+    }else{
+      layer.classList.add('motion-force');
+    }
+
+    if(layer.children.length < 18){
+      layer.innerHTML = '';
+      const count = Math.min(42, Math.max(24, Math.floor(window.innerWidth / 34)));
+      for(let i=0;i<count;i++){
+        const p = document.createElement('span');
+        p.className = 'gold-particle';
+        const size = (Math.random()*3.5 + 2.2).toFixed(1);
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.left = (Math.random()*100) + '%';
+        p.style.opacity = (Math.random()*0.55 + 0.30).toFixed(2);
+        p.style.animationDuration = (Math.random()*8 + 8).toFixed(1) + 's';
+        p.style.animationDelay = (Math.random()*7).toFixed(1) + 's';
+        p.style.setProperty('--drift', (Math.random()*90 - 45).toFixed(0) + 'px');
+        layer.appendChild(p);
+      }
+    }
+  }
+
+  function forceTilt(){
+    const selector = '.product-card, .featured-card, .custom-example-card';
+    document.addEventListener('mousemove', function(e){
+      const card = e.target.closest(selector);
+      if(!card) return;
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width;
+      const py = (e.clientY - r.top) / r.height;
+      const rotateY = (px - .5) * 8;
+      const rotateX = (.5 - py) * 8;
+      card.style.setProperty('--mx', (px*100).toFixed(1) + '%');
+      card.style.setProperty('--my', (py*100).toFixed(1) + '%');
+      card.style.transform = 'translateY(-10px) perspective(900px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg)';
+    });
+    document.addEventListener('mouseout', function(e){
+      const card = e.target.closest && e.target.closest(selector);
+      if(card && !card.contains(e.relatedTarget)) card.style.transform = '';
+    });
+  }
+
+  forceGoldParticles();
+  forceTilt();
+})();
+</script>
+
+
+
+<script>
+/* Dahab Animation Only Final Fix */
+(function(){
+  document.body.classList.add('premium-motion-ready','dahab-animations-on');
+
+  function buildMotionLayer(){
+    let layer=document.querySelector('.dahab-motion-layer');
+    if(layer) return;
+    layer=document.createElement('div');
+    layer.className='dahab-motion-layer';
+    layer.setAttribute('aria-hidden','true');
+    document.body.prepend(layer);
+    const count=Math.min(46,Math.max(24,Math.floor(window.innerWidth/32)));
+    for(let i=0;i<count;i++){
+      const dot=document.createElement('span');
+      dot.className='dahab-motion-dot';
+      const size=(Math.random()*3.8+2.2).toFixed(1);
+      dot.style.width=size+'px';
+      dot.style.height=size+'px';
+      dot.style.left=(Math.random()*100).toFixed(2)+'%';
+      dot.style.opacity=(Math.random()*.45+.35).toFixed(2);
+      dot.style.animationDuration=(Math.random()*7+7).toFixed(1)+'s';
+      dot.style.animationDelay=(Math.random()*7).toFixed(1)+'s';
+      dot.style.setProperty('--x',(Math.random()*90-45).toFixed(0)+'px');
+      layer.appendChild(dot);
+    }
+  }
+
+  function forceCardsVisible(){
+    document.querySelectorAll('.product-card,.featured-card,.custom-example-card,.contact-card').forEach(function(card,i){
+      card.style.animationDelay=(Math.min(i,8)*0.045)+'s';
+    });
+  }
+
+  buildMotionLayer();
+  forceCardsVisible();
+  setTimeout(forceCardsVisible,800);
+})();
+</script>
+
+
+<script>
+/* Safe Eid Audio + Sections Protection */
+(function(){
+  function showEverything(){
+    document.querySelectorAll('section,.section,.reveal-section,.reveal-up,.reveal-card,.reveal-logo,.product-card,.featured-card').forEach(function(el){
+      el.classList.add('visible');
+      el.style.visibility = 'visible';
+    });
+  }
+  showEverything();
+  window.addEventListener('load', showEverything);
+  setTimeout(showEverything, 500);
+
+  const audio = document.getElementById('eidAudio');
+  const btn = document.getElementById('eidAudioBtn');
+  const status = document.getElementById('eidAudioStatus');
+  if(!audio || !btn) return;
+  let playing = false;
+  function update(){
+    btn.classList.toggle('playing', playing);
+    btn.innerHTML = playing ? '<i class="fa fa-pause"></i>' : '<i class="fa fa-music"></i>';
+    if(status) status.innerHTML = playing ? 'موسيقى العيد<span>اضغط للإيقاف</span>' : 'موسيقى العيد<span>اضغط للتشغيل</span>';
+  }
+  btn.addEventListener('click', function(){
+    if(playing){ audio.pause(); playing=false; update(); return; }
+    audio.play().then(function(){ playing=true; update(); }).catch(function(){ playing=false; update(); });
+  });
+  update();
+})();
+</script>
+
+
+<script>
+/* Final root path protection for the local DAHABMENU folder.
+   Your structure is: index.html + images/products/... + images/audio/eid.mp3 */
+(function(){
+  const imageFixes = {
+    'images/coffee.big.png': 'images/coffee-big.png',
+    'audio/eid.mp3': 'images/audio/eid.mp3'
+  };
+
+  function normalizeSrc(src){
+    if(!src) return src;
+    return imageFixes[src] || src;
+  }
+
+  function fixProductImagePaths(){
+    if(Array.isArray(window.products)){
+      window.products.forEach(function(p){
+        if(p && p.image) p.image = normalizeSrc(p.image);
+      });
+    }
+  }
+
+  function forceSectionsVisible(){
+    document.querySelectorAll('section,.section,.featured-section,.menu-section,.custom-orders-cta,.custom-examples,.eid-section,.reveal-section,.reveal-up,.reveal-card,.product-card,.featured-card,.custom-example-card').forEach(function(el){
+      el.classList.add('visible');
+      el.style.visibility = 'visible';
+    });
+  }
+
+  function forceRender(){
+    try{ fixProductImagePaths(); }catch(e){}
+    try{ if(typeof renderFeatured === 'function') renderFeatured(); }catch(e){ console.warn('Featured render issue:', e); }
+    try{ if(typeof renderProducts === 'function' && typeof filtered === 'function') renderProducts(filtered(), false); }catch(e){ console.warn('Products render issue:', e); }
+    forceSectionsVisible();
+  }
+
+  document.addEventListener('DOMContentLoaded', forceRender);
+  window.addEventListener('load', forceRender);
+  setTimeout(forceRender, 300);
+  setTimeout(forceSectionsVisible, 900);
+})();
+</script>
+
+
+<style id="dahab-emergency-visibility-fix">
+  section, .section, .featured-section, .menu-section, .special-orders-section, .custom-cake-examples-section, .branches-section, footer {display:block !important; visibility:visible !important;}
+  .reveal-up,.reveal-section,.reveal-card,.product-card,.featured-card{opacity:1 !important; transform:none !important; filter:none !important;}
+  .products-grid,.featured-grid{min-height:120px;}
+  .product-card,.featured-card{animation:dahabCardIn .65s ease both;}
+  @keyframes dahabCardIn{from{opacity:0;transform:translateY(26px) scale(.97);filter:blur(8px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+</style>
+
+<script id="dahab-final-render-safety-fix">
+(function(){
+  function img(p, cls){
+    var image = p.image || '';
+    if(image){
+      return '<img src="'+image+'" alt="'+(p.name||'منتج')+'" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=&quot;'+cls+'&quot;>'+(p.emoji||'🍬')+'</div>\'">';
+    }
+    return '<div class="'+cls+'">'+(p.emoji||'🍬')+'</div>';
+  }
+  function firstPrice(p){
+    if(p.sizes && p.sizes.length) return 'ابتداءً من '+p.sizes[0].price;
+    return p.price || '';
+  }
+  function sizeMini(p, cls){
+    if(!p.sizes || !p.sizes.length) return '';
+    return '<div class="'+cls+'">'+p.sizes.map(function(s){
+      return '<span class="size-chip"><b>'+(s.label||s.name||'حجم')+'</b><small>'+(s.pieces? s.pieces+' قطعة · ' : '')+(s.size? s.size+' · ' : '')+(s.price||'')+'</small></span>';
+    }).join('')+'</div>';
+  }
+  function card(p){
+    var id = p.uid || p.id;
+    return '<div class="product-card visible reveal-card" data-product-id="'+id+'">'
+      + '<div class="product-image-wrap">'+img(p,'product-image-placeholder')+'<div class="product-cat-badge">'+((window.categoryLabels && categoryLabels[p.category]) || p.category || 'منتج')+'</div></div>'
+      + '<div class="product-body"><h3 class="product-name">'+(p.name||'منتج')+'</h3>'
+      + '<p class="product-description">'+(p.description||'')+'</p>'
+      + sizeMini(p,'product-size-options')
+      + '<div class="product-footer"><span class="product-price">'+firstPrice(p)+'</span>'
+      + '<div class="product-actions"><button type="button" class="product-btn-details js-open-product" data-product-id="'+id+'"><i class="fa fa-info-circle"></i> التفاصيل</button>'
+      + '<a class="product-btn-whatsapp js-product-whatsapp" href="#branches" data-product-id="'+id+'" aria-label="اطلب عبر واتساب"><i class="fab fa-whatsapp"></i></a></div></div></div></div>';
+  }
+  function featuredCard(p){
+    var id = p.uid || p.id;
+    return '<div class="featured-card visible reveal-card" data-product-id="'+id+'">'
+      + '<div class="featured-card-image-wrap">'+img(p,'featured-card-image-placeholder')+'<div class="featured-badge">الأكثر طلباً ★</div></div>'
+      + '<div class="featured-card-body"><h3 class="featured-card-name">'+(p.name||'منتج')+'</h3>'
+      + '<p class="featured-card-description">'+(p.description||'')+'</p>'
+      + sizeMini(p,'featured-size-options')
+      + '<div class="featured-card-footer"><span class="featured-card-price">'+firstPrice(p)+'</span>'
+      + '<button type="button" class="featured-card-btn js-open-product" data-product-id="'+id+'">التفاصيل</button></div></div></div>';
+  }
+  function ensureProducts(){
+    if(!Array.isArray(window.products)) return;
+    window.products.forEach(function(p,i){ if(!p.uid) p.uid = i+1; });
+    var fg=document.getElementById('featuredGrid');
+    if(fg && fg.children.length===0){
+      var f=products.filter(function(p){return !!p.featured;});
+      if(!f.length) f=products.slice(0,4);
+      fg.innerHTML=f.map(featuredCard).join('');
+    }
+    var pg=document.getElementById('productsGrid');
+    if(pg && pg.children.length===0){
+      pg.innerHTML=products.map(card).join('');
+    }
+    document.querySelectorAll('.product-card,.featured-card,.reveal-card,.reveal-section,.reveal-up').forEach(function(el){el.classList.add('visible');});
+    var empty=document.getElementById('emptyState'); if(empty) empty.style.display='none';
+  }
+  function bindFilters(){
+    var input=document.getElementById('searchInput');
+    var btns=[].slice.call(document.querySelectorAll('.filter-btn'));
+    function apply(){
+      if(!Array.isArray(window.products)) return;
+      var active=document.querySelector('.filter-btn.active');
+      var cat=active ? active.dataset.category : 'all';
+      var q=(input && input.value || '').trim().toLowerCase();
+      var list=products.filter(function(p){
+        var okCat = cat==='all' || p.category===cat;
+        var txt=((p.name||'')+' '+(p.description||'')).toLowerCase();
+        return okCat && (!q || txt.indexOf(q)>-1);
+      });
+      var pg=document.getElementById('productsGrid');
+      if(pg) pg.innerHTML=list.map(card).join('');
+      var empty=document.getElementById('emptyState'); if(empty) empty.style.display=list.length?'none':'block';
+    }
+    btns.forEach(function(b){ b.addEventListener('click',function(){btns.forEach(function(x){x.classList.remove('active')}); b.classList.add('active'); apply();}); });
+    if(input) input.addEventListener('input',apply);
+  }
+  function boot(){
+    document.querySelectorAll('section,.section,footer').forEach(function(s){s.style.display='block';s.style.visibility='visible';s.style.opacity='1';});
+    ensureProducts(); bindFilters();
+    setTimeout(ensureProducts,300); setTimeout(ensureProducts,1000);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();
+  window.addEventListener('load',boot);
+})();
 </script>
 </body>
 </html>
