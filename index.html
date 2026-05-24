@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>حلويات دهب  —  معكم في كل فرحة </title>
+  <title>معكم في كل فرحة </title>
 
 
 
@@ -821,7 +822,7 @@ body::before{
   filter: drop-shadow(0 0 18px rgba(243, 198, 107, 0.42));
 }
 .hero-title{font-family:'Tajawal',sans-serif;font-weight:900;font-size:clamp(3rem,8vw,6.4rem);letter-spacing:-.04em;color:transparent;background:linear-gradient(180deg,#f9df99 0%,#b77a25 78%);-webkit-background-clip:text;background-clip:text;text-shadow:none;line-height:1.02;}
-.hero-subtitle{font-weight:300px;font-size:clamp(1.75rem,4vw,3.15rem);color:#f7e8ca;text-shadow:0 8px 38px rgba(0,0,0,.72);}
+.hero-subtitle{font-weight:650px;font-size:clamp(1.75rem,4vw,3.15rem);color:#f7e8ca;text-shadow:0 8px 38px rgba(0,0,0,.72);}
 .hero-divider{justify-content:flex-start;width:180px;margin:8px 0;}
 .divider-line{background:linear-gradient(to left,transparent,rgba(243,198,107,.9),transparent)}
 .divider-diamond{color:var(--gold-light);filter:drop-shadow(0 0 8px rgba(243,198,107,.45))}
@@ -1421,7 +1422,7 @@ section, .section, .featured-section, .menu-section, .custom-orders-cta, .custom
 .product-card, .featured-card, .custom-example-card, .reveal-section, .reveal-up, .reveal-card{
   visibility:visible !important;
 }
-.eid-section{margin-top:0;}
+.eid-section{background-image: "images/eid-bg.png"; margin-top:0;}
 
 </style>
 </head>
@@ -1482,10 +1483,10 @@ section, .section, .featured-section, .menu-section, .custom-orders-cta, .custom
 
      <img style="width: 450px;" src="images/logo-dahab2.png" alt="Dahab Sweets Logo" id="heroLogoImage" class="hero-main-logo" />
     
-    <p class="hero-subtitle reveal-up delay-1">معكـم بـكل فـرحة</p>
+    <h1 class="hero-subtitle reveal-up delay-1 " style="width: 590px;">معكـم بـكل فـرحة</h1>
     <div class="hero-divider reveal-up delay-2">
       <span class="divider-line"></span>
-      <span class="divider-diamond">حلويــــات دهــــب</span>
+      <!-- <span class="divider-diamond">حلويــــات دهــــب</span> -->
       <span class="divider-line"></span>
     </div>
     <div class="hero-buttons reveal-up delay-3">
@@ -1829,7 +1830,9 @@ function closeBranchPicker(){
 const heroBackgrounds = [
   "images/hero-bg.png",
   "images/hero-bg-cake.png",
-  "images/hero-bg-packages.png"
+  "images/hero-bg-packages.png",
+  "images/hero-bg-cepe.png",
+   "images/hero-bg-pan.png",
 ];
 
 const heroBg = document.getElementById("heroBg");
@@ -1881,6 +1884,16 @@ const products = [
   {
     id: 2,
     name: "ميلك شيك بلوبري",
+    category: "milkshake",
+    price: "25 ₪",
+    image: "images/products/milk-shake/milk-shake-blubery.png",
+    description: "ميلك شيك بلوبري منعش بقوام ناعم ونكهة فاكهية خفيفة.",
+    featured: false,
+    emoji: "🫐"
+  },
+   {
+    id: 2,
+    name: "ميلك شيك كيندر",
     category: "milkshake",
     price: "25 ₪",
     image: "images/products/milk-shake/milk-shake-blubery.png",
@@ -2043,7 +2056,7 @@ const products = [
     name: "كريب مكس",
     category: "crepe",
     price: "35 ₪",
-    image: "images/products/crepe/crepe-mix.png",
+    image: "images/products/crepe/crepe-.png",
     description: "كريب مكس يجمع أكثر من نكهة وصوص في قطعة واحدة بطعم متوازن وفاخر.",
     featured: true,
     emoji: "🥞"
@@ -2339,7 +2352,7 @@ const products = [
   // =========================
   {
     id: 40,
-    name: "صينية عربية مشكلة",
+    name: " عربية",
     category: "eastenSweets",
     price: "20 ₪",
     image: "images/products/easten-sweet/عربية.png",
@@ -2347,9 +2360,20 @@ const products = [
     featured: true,
     emoji: "🍽️"
   },
+
+    {
+    id: 40,
+    name: " كنافة قشطة",
+    category: "eastenSweets",
+    price: "12 ₪",
+    image: "images/products/easten-sweet/عربية.png",
+    description: "صينية عربية مشكلة تضم أصنافًا شرقية متنوعة بطابع ضيافة أصيل.",
+    featured: true,
+    emoji: "🍽️"
+  },
   {
     id: 41,
-    name: "كنافة",
+    name: "بورمة قشطة",
     category: "eastenSweets",
     price: "12 ₪",
     image: "images/products/easten-sweet/كنافة.png",
@@ -2389,7 +2413,7 @@ const products = [
   },
   {
     id: 45,
-    name: "حلويات مشكل",
+    name: "حلبي مشكل",
     category: "eastenSweets",
     price: "25 ₪",
     image: "images/products/easten-sweet/حلويات-مشكل.png",
@@ -2399,7 +2423,38 @@ const products = [
   },
   {
     id: 46,
-    name: "بقلاوة بالجبن",
+    name: "حلاوة الجبن",
+    category: "eastenSweets",
+    price: "25 ₪",
+    image: "images/products/easten-sweet/بقلاوة-بالجبن.png",
+    description: "بقلاوة محشوة بالجبن بطبقات مقرمشة وشيرة خفيفة.",
+    featured: false,
+    emoji: "🥮"
+  },
+   {
+    id: 45,
+    name: "حلبي وكاجو",
+    category: "eastenSweets",
+    price: "25 ₪",
+    image: "images/products/easten-sweet/-مشكل.png",
+    description: "تشكيلة حلويات شرقية متنوعة مناسبة للضيافة.",
+    featured: true,
+    emoji: "🍬"
+  },
+
+  {
+    id: 46,
+    name: " مشكل عادي",
+    category: "eastenSweets",
+    price: "25 ₪",
+    image: "images/products/easten-sweet/بقلاوة-بالجبن.png",
+    description: "بقلاوة محشوة بالجبن بطبقات مقرمشة وشيرة خفيفة.",
+    featured: false,
+    emoji: "🥮"
+  },
+  {
+    id: 46,
+    name: " مشكل كاجو",
     category: "eastenSweets",
     price: "25 ₪",
     image: "images/products/easten-sweet/بقلاوة-بالجبن.png",
@@ -2437,9 +2492,9 @@ const products = [
     featured: true,
     emoji: "🎂",
     sizes: [
-      { label: "صغير", dimensions: "20×20", pieces: "12 قطعة", price: "120 ₪" },
-      { label: "وسط", dimensions: "25×25", pieces: "18 قطعة", price: "160 ₪" },
-      { label: "كبير", dimensions: "30×30", pieces: "23 قطعة", price: "200 ₪" }
+           { label: "صغير", dimensions: "30×30", pieces: "25 قطعة", price: "200₪" },
+      { label: "وسط",  dimensions: "30×40", pieces: "35 قطعة", price: "250₪" },
+      { label: "كبير", dimensions: "60×40", pieces: "50 قطعة", price: "450 ₪" }
     ]
   }
 ];
@@ -2452,9 +2507,9 @@ products.forEach((product, index) => {
   // Cakes have three sizes. Edit these prices anytime from here.
   if(product.category === "cake" && !product.sizes){
     product.sizes = [
-      { label: "صغير", dimensions: "20×20", pieces: "12 قطعة", price: product.price },
-      { label: "وسط",  dimensions: "25×25", pieces: "18 قطعة", price: "45 ₪" },
-      { label: "كبير", dimensions: "30×30", pieces: "23 قطعة", price: "65 ₪" }
+      { label: "صغير", dimensions: "30×30", pieces: "25 قطعة", price: "200₪" },
+      { label: "وسط",  dimensions: "30×40", pieces: "35 قطعة", price: "250₪" },
+      { label: "كبير", dimensions: "60×40", pieces: "50 قطعة", price: "450 ₪" }
     ];
   }
 });
@@ -2488,8 +2543,6 @@ function getImageUrl(imagePath){
   if(!imagePath) return "";
   if(/^https?:\/\//i.test(imagePath)) return imagePath;
 
-  // عند رفع الموقع أونلاين، هذا يحول مسار الصورة إلى رابط كامل يظهر داخل رسالة واتساب.
-  // ملاحظة: واتساب لا يرفق الصورة تلقائياً، لكنه يرسل رابطها مع بيانات المنتج.
   return new URL(imagePath, window.location.href).href;
 }
 
@@ -2819,7 +2872,9 @@ document.querySelectorAll(".mobile-nav-link").forEach(l=>l.addEventListener("cli
 
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener("click",e=>{
-    const t=document.querySelector(a.getAttribute("href"));
+    const href = a.getAttribute("href");
+    if(href === "#" || href === "#branches") return;
+    const t=document.querySelector(href);
     if(t){ e.preventDefault(); t.scrollIntoView({behavior:"smooth",block:"start"}); }
   });
 });
@@ -3107,8 +3162,7 @@ observeReveal();
 
 
 <script>
-/* Final root path protection for the local DAHABMENU folder.
-   Your structure is: index.html + images/products/... + audio/eid.mp3 */
+
 (function(){
   const imageFixes = {
     'images/coffee.big.png': 'images/coffee-big.png',
@@ -3186,7 +3240,7 @@ observeReveal();
       + sizeMini(p,'product-size-options')
       + '<div class="product-footer"><span class="product-price">'+firstPrice(p)+'</span>'
       + '<div class="product-actions"><button type="button" class="product-btn-details js-open-product" data-product-id="'+id+'"><i class="fa fa-info-circle"></i> التفاصيل</button>'
-      + '<a class="product-btn-whatsapp js-product-whatsapp" href="#branches" data-product-id="'+id+'" aria-label="اطلب عبر واتساب"><i class="fab fa-whatsapp"></i></a></div></div></div></div>';
+      + '<button type="button" class="product-btn-whatsapp js-product-whatsapp" data-product-id="'+id+'" aria-label="اطلب عبر واتساب"><i class="fab fa-whatsapp"></i></button></div></div></div></div>';
   }
   function featuredCard(p){
     var id = p.uid || p.id;
@@ -3442,7 +3496,7 @@ observeReveal();
 })();
 </script>
 
-
+ث
 
 <script>
 /* ===== FINAL WHATSAPP CTA FIX =====
@@ -3706,7 +3760,7 @@ observeReveal();
     price.innerHTML = priceText(p);
     if(whats){
       const realId = p.uid || p.id || id;
-      whats.href = '#branches';
+      whats.href = 'javascript:void(0)';
       whats.dataset.productId = realId;
       whats.innerHTML = '<i class="fab fa-whatsapp"></i> إرسال بيانات المنتج للواتساب';
     }
@@ -3773,6 +3827,395 @@ observeReveal();
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setupAudio);
   else setupAudio();
   window.addEventListener('load', setupAudio);
+})();
+</script>
+
+
+
+<!-- =====================================================
+     FINAL SAFE PATCH: Details + WhatsApp 4 branches + rendering
+     Added without deleting existing code
+===================================================== -->
+<style>
+  /* Force modal visibility when opened */
+  #modalOverlay.modal-overlay{
+    position:fixed !important;
+    inset:0 !important;
+    z-index:999999 !important;
+    background:rgba(0,0,0,.78) !important;
+    backdrop-filter:blur(7px) !important;
+    display:none !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:18px !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+  }
+  #modalOverlay.modal-overlay.open{display:flex !important;}
+  #productModal.modal{
+    display:block !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+    width:min(540px,100%) !important;
+    max-height:92vh !important;
+    overflow:auto !important;
+    border-radius:24px !important;
+    background:linear-gradient(180deg,#271106,#100703) !important;
+    border:1px solid rgba(243,198,107,.55) !important;
+    color:#f7e1af !important;
+    box-shadow:0 35px 90px rgba(0,0,0,.7),0 0 42px rgba(185,130,36,.22) !important;
+  }
+  body.dahab-modal-open{overflow:hidden !important;}
+
+  /* Force branch modal visibility when opened */
+  #branchModalOverlay.branch-modal-overlay{
+    position:fixed !important;
+    inset:0 !important;
+    z-index:1000000 !important;
+    display:none !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:18px !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+    background:rgba(0,0,0,.78) !important;
+    backdrop-filter:blur(8px) !important;
+  }
+  #branchModalOverlay.branch-modal-overlay.open{display:flex !important;}
+  #branchModalOverlay .branch-modal{
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+  }
+
+  .dahab-branches-section{
+    position:relative;
+    padding:70px 0;
+    background:radial-gradient(circle at 50% 0%,rgba(243,198,107,.10),transparent 42%);
+  }
+  .dahab-branches-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:16px;
+  }
+  .dahab-branch-display-card{
+    border:1px solid rgba(243,198,107,.34);
+    background:linear-gradient(180deg,rgba(42,19,6,.82),rgba(18,8,4,.94));
+    border-radius:20px;
+    padding:22px 18px;
+    text-align:center;
+    color:#f7e1af;
+    box-shadow:0 18px 45px rgba(0,0,0,.34);
+  }
+  .dahab-branch-display-card i{color:#d4a044;font-size:1.45rem;margin-bottom:10px;display:block;}
+  .dahab-branch-display-card strong{display:block;color:#f3d28a;font-size:1.05rem;margin-bottom:5px;}
+  .dahab-branch-display-card span{color:rgba(246,225,187,.66);font-size:.86rem;}
+
+  .product-btn-details,.product-btn-whatsapp,.featured-card-btn,.js-open-product,.js-whatsapp-product{
+    pointer-events:auto !important;
+    position:relative !important;
+    z-index:5 !important;
+  }
+</style>
+
+<script>
+(function(){
+  'use strict';
+
+  const FALLBACK_BRANCHES = [
+    { id:'nuseirat', name:'فرع النصيرات', area:'النصيرات', phone:'972569896990', note:'الحلويات الشرقية والغربية متوفرة' },
+    { id:'deir_al_balah', name:'فرع دير البلح', area:'دير البلح', phone:'972569896990', note:'الحلويات الشرقية والغربية متوفرة' },
+    { id:'gaza_al_naser', name:'فرع غزة النصر', area:'غزة - النصر', phone:'972569896990', note:'الحلويات الغربية قريباً' },
+    { id:'branch_four', name:'الفرع الرابع', area:'قريباً', phone:'972569896990', note:'الحلويات الغربية قريباً' }
+  ];
+
+  const WESTERN_CATEGORIES_SAFE = ['waffle','crepe','miniCake','miniPanCake','icecream','cake','cheaseCake'];
+  const WESTERN_ALLOWED_SAFE = ['nuseirat','deir_al_balah'];
+
+  let pendingProduct = null;
+  let pendingMessage = '';
+
+  function $(id){ return document.getElementById(id); }
+  function getProducts(){
+    try { return Array.isArray(products) ? products : []; }
+    catch(e){ return []; }
+  }
+  function getLabels(){
+    try { return categoryLabels || {}; }
+    catch(e){ return {}; }
+  }
+  function getBranches(){
+    try { return Array.isArray(BRANCHES) && BRANCHES.length === 4 ? BRANCHES : FALLBACK_BRANCHES; }
+    catch(e){ return FALLBACK_BRANCHES; }
+  }
+  function esc(v){
+    return String(v == null ? '' : v).replace(/[&<>'"]/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c];
+    });
+  }
+  function productKey(p, i){
+    if(!p) return String(i || 0);
+    if(!p.__safeKey) p.__safeKey = 'p_' + i + '_' + String(p.id || i);
+    return p.__safeKey;
+  }
+  function findProduct(key){
+    const list = getProducts();
+    return list.find(function(p, i){
+      return String(productKey(p,i)) === String(key) || String(p.uid) === String(key) || String(p.id) === String(key);
+    });
+  }
+  function sizeHTML(p, cls){
+    if(!p || !Array.isArray(p.sizes) || !p.sizes.length) return '';
+    return '<div class="'+cls+'">' + p.sizes.map(function(s){
+      const label = s.label || s.name || s.size || 'حجم';
+      const price = s.price || '';
+      const pieces = s.pieces ? ('<small>'+esc(s.pieces)+'</small>') : '';
+      const measure = s.measure || s.dimensions || s.dimension || '';
+      return '<span class="product-size-pill">'+esc(label)+'<span>'+esc(price)+'</span>'+pieces+(measure ? '<small>'+esc(measure)+'</small>' : '')+'</span>';
+    }).join('') + '</div>';
+  }
+  function priceText(p){
+    if(p && Array.isArray(p.sizes) && p.sizes.length){
+      return '<span class="price-from-label">ابتداءً من <strong>'+esc(p.sizes[0].price || p.price || '')+'</strong></span>';
+    }
+    return esc((p && p.price) || '');
+  }
+  function isWestern(p){ return !!p && WESTERN_CATEGORIES_SAFE.includes(p.category); }
+  function availability(p){
+    if(!isWestern(p)) return '';
+    return '<div class="availability-badge"><i class="fa fa-store"></i> متوفر في النصيرات ودير البلح فقط</div>';
+  }
+  function imgPart(p, wrapClass){
+    if(p && p.image){
+      return '<div class="'+wrapClass+'"><img src="'+esc(p.image)+'" alt="'+esc(p.name)+'" onerror="this.style.display=\'none\';this.parentElement.insertAdjacentHTML(\'beforeend\',\'<div class=&quot;product-image-placeholder&quot;>'+esc(p.emoji || '🍰')+'</div>\')"></div>';
+    }
+    return '<div class="'+wrapClass+'"><div class="product-image-placeholder">'+esc((p && p.emoji) || '🍰')+'</div></div>';
+  }
+  function card(p, i, featured){
+    const key = productKey(p,i);
+    const cardCls = featured ? 'featured-card visible reveal-card' : 'product-card visible reveal-card';
+    const wrap = featured ? 'featured-card-image-wrap' : 'product-image-wrap';
+    const body = featured ? 'featured-card-body' : 'product-body';
+    const name = featured ? 'featured-card-name' : 'product-name';
+    const desc = featured ? 'featured-card-description' : 'product-description';
+    const footer = featured ? 'featured-card-footer' : 'product-footer';
+    const price = featured ? 'featured-card-price' : 'product-price';
+    const labels = getLabels();
+    return '<article class="'+cardCls+'" data-product-id="'+esc(key)+'">'
+      + imgPart(p, wrap)
+      + '<div class="'+body+'">'
+      + '<h3 class="'+name+'">'+esc(p.name || 'منتج')+'</h3>'
+      + '<p class="'+desc+'">'+esc(p.description || '')+'</p>'
+      + availability(p)
+      + sizeHTML(p, featured ? 'featured-size-options' : 'product-size-options')
+      + '<div class="'+footer+'">'
+      + '<div class="'+price+'">'+priceText(p)+'</div>'
+      + '<div class="product-actions">'
+      + '<button type="button" class="product-btn-details js-open-product" data-product-id="'+esc(key)+'"><i class="fa fa-eye"></i> التفاصيل</button>'
+      + '<button type="button" class="product-btn-whatsapp js-whatsapp-product" data-product-id="'+esc(key)+'" aria-label="واتساب"><i class="fab fa-whatsapp"></i></button>'
+      + '</div></div></div></article>';
+  }
+
+  function renderAll(){
+    const list = getProducts();
+    list.forEach(function(p,i){ productKey(p,i); if(!p.uid) p.uid = productKey(p,i); });
+    const pg = $('productsGrid');
+    if(pg) pg.innerHTML = list.map(function(p,i){ return card(p,i,false); }).join('');
+    const fg = $('featuredGrid');
+    if(fg){
+      const f = list.filter(function(p){ return !!p.featured; });
+      fg.innerHTML = (f.length ? f : list.slice(0,4)).map(function(p,i){ return card(p,i,true); }).join('');
+    }
+    const empty = $('emptyState');
+    if(empty) empty.style.display = list.length ? 'none' : 'block';
+    setupSearchAndFilters();
+    ensureBranchesSection();
+  }
+
+  function setupSearchAndFilters(){
+    const input = $('searchInput');
+    const buttons = Array.from(document.querySelectorAll('.filter-btn'));
+    if(!input && !buttons.length) return;
+    function apply(){
+      const q = input ? input.value.trim().toLowerCase() : '';
+      const active = document.querySelector('.filter-btn.active');
+      const cat = active ? active.dataset.category : 'all';
+      const list = getProducts().filter(function(p){
+        const okCat = cat === 'all' || p.category === cat;
+        const okQ = !q || String(p.name || '').toLowerCase().includes(q) || String(p.description || '').toLowerCase().includes(q);
+        return okCat && okQ;
+      });
+      const pg = $('productsGrid');
+      if(pg) pg.innerHTML = list.map(function(p,i){ return card(p,i,false); }).join('');
+      const empty = $('emptyState');
+      if(empty) empty.style.display = list.length ? 'none' : 'block';
+    }
+    if(input && !input.dataset.safeBound){ input.addEventListener('input', apply); input.dataset.safeBound='1'; }
+    buttons.forEach(function(btn){
+      if(btn.dataset.safeBound) return;
+      btn.dataset.safeBound='1';
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        buttons.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        apply();
+      });
+    });
+  }
+
+  function buildMessage(p){
+    let msg = 'مرحبا دهب، بدي أطلب هذا المنتج:\n\n';
+    msg += 'المنتج: ' + (p.name || '') + '\n';
+    if(p.category) msg += 'القسم: ' + (getLabels()[p.category] || p.category) + '\n';
+    if(p.price) msg += 'السعر: ' + p.price + '\n';
+    if(Array.isArray(p.sizes) && p.sizes.length){
+      msg += '\nالأحجام المتوفرة:\n';
+      p.sizes.forEach(function(s){
+        msg += '- ' + (s.label || s.name || s.size || 'حجم')
+          + (s.measure || s.dimensions ? ' / ' + (s.measure || s.dimensions) : '')
+          + (s.pieces ? ' / ' + s.pieces : '')
+          + (s.price ? ' / ' + s.price : '') + '\n';
+      });
+    }
+    if(p.description) msg += '\nملاحظات المنتج: ' + p.description + '\n';
+    if(p.image) msg += '\nصورة المنتج: ' + location.origin + '/' + String(p.image).replace(/^\//,'') + '\n';
+    msg += '\nالاسم:\nالعنوان:\nوقت الاستلام:\nملاحظات:';
+    return msg;
+  }
+  function waUrl(phone, msg){ return 'https://wa.me/' + String(phone).replace(/\D/g,'') + '?text=' + encodeURIComponent(msg); }
+
+  function openDetails(key){
+    const p = findProduct(key);
+    if(!p) return;
+    const overlay = $('modalOverlay');
+    if(!overlay) return;
+    const img = $('modalImage');
+    const cat = $('modalCategory');
+    const name = $('modalName');
+    const desc = $('modalDescription');
+    const price = $('modalPrice');
+    const whats = $('modalWhatsapp');
+    const labels = getLabels();
+    if(img){
+      if(p.image){ img.src = p.image; img.alt = p.name || ''; img.style.display='block'; }
+      else { img.removeAttribute('src'); img.style.display='none'; }
+    }
+    if(cat) cat.textContent = labels[p.category] || p.category || 'منتج';
+    if(name) name.textContent = p.name || 'منتج';
+    if(desc) desc.innerHTML = esc(p.description || '') + sizeHTML(p,'modal-size-options') + availability(p);
+    if(price) price.innerHTML = priceText(p);
+    if(whats){
+      whats.href = '#';
+      whats.dataset.productId = productKey(p, getProducts().indexOf(p));
+      whats.innerHTML = '<i class="fab fa-whatsapp"></i> إرسال بيانات المنتج للفرع';
+    }
+    overlay.classList.add('open');
+    document.body.classList.add('dahab-modal-open');
+  }
+
+  function closeDetails(){
+    const overlay = $('modalOverlay');
+    if(overlay) overlay.classList.remove('open');
+    if(!($('branchModalOverlay') && $('branchModalOverlay').classList.contains('open'))){
+      document.body.classList.remove('dahab-modal-open');
+    }
+  }
+
+  function renderBranchPicker(){
+    const list = $('branchList');
+    if(!list) return;
+    const branches = getBranches();
+    const isW = isWestern(pendingProduct);
+    const note = document.querySelector('.branch-availability-note');
+    if(note) note.textContent = isW ? 'هذا النوع متوفر حالياً في فرع النصيرات وفرع دير البلح فقط.' : '';
+    list.innerHTML = branches.map(function(b,i){
+      const allowed = !isW || WESTERN_ALLOWED_SAFE.includes(b.id);
+      return '<button type="button" class="branch-card '+(!allowed?'branch-disabled':'')+'" data-safe-branch="'+i+'" '+(!allowed?'data-disabled="1"':'')+'>'
+        + '<strong>'+esc(b.name)+'</strong>'
+        + '<span>'+esc(b.area || b.note || '')+'</span>'
+        + (allowed ? '<em><i class="fab fa-whatsapp"></i> اطلب من هذا الفرع</em>' : '<span class="branch-soon"><i class="fa fa-lock"></i> قريباً لهذا النوع</span>')
+        + '</button>';
+    }).join('');
+  }
+  function openBranchPicker(p){
+    pendingProduct = p || null;
+    pendingMessage = p ? buildMessage(p) : 'مرحبا دهب، بدي أطلب من عندكم.';
+    renderBranchPicker();
+    const overlay = $('branchModalOverlay');
+    if(overlay){
+      overlay.classList.add('open');
+      document.body.classList.add('dahab-modal-open');
+    }
+  }
+  function closeBranchPicker(){
+    const overlay = $('branchModalOverlay');
+    if(overlay) overlay.classList.remove('open');
+    pendingProduct = null;
+    pendingMessage = '';
+    if(!($('modalOverlay') && $('modalOverlay').classList.contains('open'))){
+      document.body.classList.remove('dahab-modal-open');
+    }
+  }
+
+  function ensureBranchesSection(){
+    if($('branches')) return;
+    const footer = document.querySelector('.site-footer');
+    const section = document.createElement('section');
+    section.className = 'dahab-branches-section section';
+    section.id = 'branches';
+    section.innerHTML = '<div class="container"><div class="section-heading"><span class="section-tag">فروعنا</span><h2 class="section-title">اختر الفرع الأقرب إليك</h2></div><div class="dahab-branches-grid">'
+      + getBranches().map(function(b){ return '<div class="dahab-branch-display-card"><i class="fa fa-location-dot"></i><strong>'+esc(b.name)+'</strong><span>'+esc(b.area || b.note || '')+'</span></div>'; }).join('')
+      + '</div></div>';
+    if(footer && footer.parentNode) footer.parentNode.insertBefore(section, footer);
+  }
+
+  document.addEventListener('click', function(e){
+    const detailsBtn = e.target.closest('.js-open-product,.product-btn-details,.featured-card-btn');
+    if(detailsBtn){
+      const cardEl = detailsBtn.closest('[data-product-id]');
+      const key = detailsBtn.dataset.productId || (cardEl && cardEl.dataset.productId);
+      if(key){
+        e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
+        openDetails(key);
+        return false;
+      }
+    }
+    const whatsBtn = e.target.closest('.js-whatsapp-product,.product-btn-whatsapp,#modalWhatsapp,.modal-whatsapp');
+    if(whatsBtn){
+      const cardEl = whatsBtn.closest('[data-product-id]');
+      const key = whatsBtn.dataset.productId || (cardEl && cardEl.dataset.productId);
+      const p = key ? findProduct(key) : pendingProduct;
+      if(p){
+        e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
+        openBranchPicker(p);
+        return false;
+      }
+    }
+    if(e.target.closest('#modalClose')){ e.preventDefault(); closeDetails(); return; }
+    if(e.target === $('modalOverlay')){ closeDetails(); return; }
+    if(e.target.closest('#branchModalClose')){ e.preventDefault(); closeBranchPicker(); return; }
+    if(e.target === $('branchModalOverlay')){ closeBranchPicker(); return; }
+    const branchBtn = e.target.closest('[data-safe-branch]');
+    if(branchBtn){
+      e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
+      if(branchBtn.dataset.disabled === '1') return false;
+      const b = getBranches()[Number(branchBtn.dataset.safeBranch)];
+      if(b) window.open(waUrl(b.phone, pendingMessage), '_blank');
+      closeBranchPicker();
+      return false;
+    }
+  }, true);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeDetails(); closeBranchPicker(); }
+  });
+
+  function boot(){ renderAll(); }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+  window.addEventListener('load', boot);
+  setTimeout(boot, 250);
 })();
 </script>
 
